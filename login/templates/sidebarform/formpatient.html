@@ -1,0 +1,122 @@
+{%extends 'sidebarform/sidebarlayout.html'%}
+    {% load static %}
+
+{%block content%}
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>User Mangement</h1>
+                <p><a href="#">Home</a> &#8594; <span>Add Patient</span></p>
+            </div>
+        </div>
+    </div><!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+
+        <div class="layer-wrapper text-center">
+
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <br><br><br><br><br><br>
+                     
+                        <div class="sub-ttl">User Mangement</div>
+                        <a href="formdoctor" class="row blog-recent">
+                            <div class="col-4 blog-recent-img">
+                                <img class="img-responsive img-thumbnail" src="uploads/recent-1.jpg" alt="">
+                            </div>
+                            <div class="col-8 blog-recent-post">
+                                <h3>Add Doctors</h3>
+                                
+                            </div>
+                        </a>
+                        <a href="#" class="row blog-recent">
+                            <div class="col-4 blog-recent-img">
+                                <img class="img-responsive img-thumbnail" src="uploads/recent-2.jpg" alt="">
+                            </div>
+                            <div class="col-8 blog-recent-post">
+                                <h3>Add Patients</h3>
+                           
+                            </div>
+                        </a>
+                        <a href="formlab" class="row blog-recent">
+                            <div class="col-4 blog-recent-img">
+                                <img class="img-responsive img-thumbnail" src="uploads/recent-3.jpg" alt="">
+                            </div>
+                            <div class="col-8 blog-recent-post">
+                                <h3>Add Lab Tech</h3>
+                            
+                            </div>
+                        </a>
+                        
+                    
+                    
+                </div>
+
+               <!--form-->
+
+            <div id="login-page" class="layer-stretch">
+                 <h2>Add Patient</h2>
+        <div class="layer-wrapper"> 
+            <div class="form-container">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    {{form.name}}
+                    <label class="mdl-textfield__label" for="sample-text-1">Name<em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Text!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    {{form.dob}}
+                    <label class="mdl-textfield__label" for="sample-text-1">DOB<em> *</em></label>
+                    <span class="mdl-textfield__error">Date Format dd/mm/yyyy!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-envelope-o"></i>
+                    {{form.email}}
+                    <label class="mdl-textfield__label" for="login-email">Email <em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-key"></i>
+                    {{form.password}}
+                    <label class="mdl-textfield__label" for="login-password">Password <em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Password!</span>
+              
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-phone"></i>
+                    {{form.number}}
+                    <label class="mdl-textfield__label" for="sample-number-1">Number</label>
+                    <span class="mdl-textfield__error">Please Enter Valid Number!</span>
+                </div>
+                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label form-input-icon">
+                    <i class="fa fa-angle-double-down"></i>
+                    <select class="mdl-selectfield__select" id="sample-selectlist-1">
+                        <option value="">&nbsp;</option>
+                        <option value="1">Admimtted</option>
+                        <option value="2">Discharged</option>
+                        
+                    </select>
+                    <label class="mdl-selectfield__label" for="sample-selectlist-1">Status</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    {{form.admit}}
+                    <label class="mdl-textfield__label" for="sample-text-1">Admit Date<em> *</em></label>
+                    <span class="mdl-textfield__error">Date Format dd/mm/yyyy!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    {{form.discharge}}
+                    <label class="mdl-textfield__label" for="sample-text-1">Discharge Date<em> *</em></label>
+                    <span class="mdl-textfield__error">Date Format dd/mm/yyyy!</span>
+                </div>
+                <div class="form-submit">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    {%endblock%}

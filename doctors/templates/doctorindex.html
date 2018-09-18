@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Site Title -->
+    <title>Klinik health care - HTML5 &#38; CSS3 Template for Clinic and Hospital</title>
+    <!-- Meta Description Tag -->
+    <meta name="Description" content="Klinik is a HTML5 & CSS3 responsive template">
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesoeme Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'font-awesome/css/font-awesome.min.css'%}" />
+    <!-- Google web Font -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <!-- Material Design Lite Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/material.min.css'%}" />
+    <!-- Material Design Select Field Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/mdl-selectfield.min.css'%}">
+    <!-- Owl Carousel Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}" />
+    <!-- Animate Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/animate.min.css'%}" />
+    <!-- Magnific Popup Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.css'%}" />
+    <!-- Flex Slider Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/flexslider.css'%}" />
+    <!-- Custom Main Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <!-- Start Header Section -->
+
+ <header id="header-transparent">
+        <div class="layer-stretch hdr-center">
+            <div class="row align-items-center">
+                <div class="col-5 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                    <div class="hdr-center-account text-left p-0">
+                        <a class="font-14 mr-4" data-toggle="modal" data-target="#loginpopup"><i class="fa fa-sign-in"></i>Login</a>
+                        <a class="font-14" data-toggle="modal" data-target="#registerpopup"><i class="fa fa-user-o"></i>Profile</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="hdr-center-logo text-center">
+                        <a href="index.html" class="d-inline-block"><img src="{%static 'images/logo.png'%}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-5 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                    <div class="pull-right">
+                        <ul class="social-list social-list-white">
+                            <li>
+                                <a href="#" id="hdr-facebook" class="fa fa-facebook rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-facebook">Facebook</span>
+                            </li>
+                            <li>
+                                <a href="#" id="hdr-twitter" class="fa fa-twitter rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-twitter">Twitter</span>
+                            </li>
+                            <li>
+                                <a href="#" id="hdr-google" class="fa fa-google rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-google">Google</span>
+                            </li>
+                            <li>
+                                <a href="#" id="hdr-instagram" class="fa fa-instagram rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-instagram">Instagram</span>
+                            </li>
+                            <li>
+                                <a href="#" id="hdr-youtube" class="fa fa-youtube rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-youtube">Youtube</span>
+                            </li>
+                            <li>
+                                <a href="#" id="hdr-linkedin" class="fa fa-linkedin rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-linkedin">Linkedin</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-transparent-menu">
+            <div class="hdr layer-stretch">
+                <div class="row align-items-center justify-content-end">
+                    <!-- Start Menu Section -->
+                    <ul class="col menu text-left">
+                        <li>
+                            <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'doctors:home'%}">Home </i></a>
+                           
+                        </li>
+                        
+                        <li>
+                            <a id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'doctors:patientname'%}">Patients</i></a>
+                            
+                        </li>
+                        <li class="menu-megamenu-li">
+                            <a id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'doctors:patappointment'%}">Appointment</i></a>
+                           
+                        </li>
+                        
+                        
+                    </ul>
+                    <div class="col-2 col-md-auto col-lg-auto">
+                        <div class="mdl-button mdl-js-button mdl-button--fab hdr-search">
+                            <i class="fa fa-search fa-2x color-white"></i>
+                        </div>
+                    </div>
+                    <div id="menu-bar" class="col-2 col-md-auto"><a><i class="fa fa-bars color-white"></i></a></div>
+                </div>
+                <div class="search-banner animated fadeInUp">
+                    <input type="text" placeholder="Search your Query ...">
+                </div>
+            </div>
+        </div>
+    </header><!-- End Header Section -->
+    <div id="slider" class="slider-1 slider-2">
+        <div class="flexslider slider-wrapper">
+            <ul class="slides">     
+                <li>
+                    <div class="slider-info">
+                        <h1 class="animated fadeInDown">55+ Page Tamplates and Much More</h1>
+                        <p class="animated fadeInDown">We have created 55+ Pages, 200+ Components or Shortcodes, Popup for this template and more in future. #twitterhash, @facebooktag</p>
+                    </div>
+                    <div class="slider-backgroung-image" style="background-image: url({%static 'uploads/slider-1.jpg'%});"></div>
+                    <!-- Make an Appointment  Button -->
+                    <div class="slider-button slider-appointment">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  animated fadeInUp">Make An Appointment<i class="fa fa-flag-checkered"></i></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider-info">
+                        <h2>Your Identity. Our Responsibility</h2>
+                        <p>This is tag line ipsum dolor sit amet, consectetur Nihil cupiditate. mollitia maiores temp fugit! Lorem ipsum dolor sit amet, consectetur adipisicing elit#twitterhash, @facebooktag</p>
+                    </div>
+                    <div class="slider-backgroung-image" style="background-image: url({%static 'uploads/slider-2.jpg'%});"></div>
+                    <!-- Make an Appointment  Button -->
+                    <div class="slider-button">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  animated fadeInUp">Read More<i class="fa fa-external-link"></i></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider-info">
+                        <h2>24/7 Support Services</h2>
+                        <p>Do not hesitate to contact us on our dedicated support forum. mollitia maiores temp fugit! Lorem ipsum dolor sit amet, consectetur adipisicing elit #twitterhash, @facebooktag</p>
+                    </div>
+                    <div class="slider-backgroung-image" style="background-image: url({%static 'uploads/slider-3.jpg'%});"></div>
+                    <!-- Make an Appointment  Button -->
+                    <div class="slider-button">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  animated fadeInUp">About Us<i class="fa fa-eye"></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Start Login Modal -->
+    <div id="loginpopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Login Now</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-envelope-o"></i>    
+                        <input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="loginpopup-email">
+                        <label class="mdl-textfield__label" for="loginpopup-email">Email <em> *</em></label>
+                        <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-key"></i>
+                        <input class="mdl-textfield__input" type="password" id="loginpopup-password">
+                        <label class="mdl-textfield__label" for="loginpopup-password">Password <em> *</em></label>
+                        <span class="mdl-textfield__error">Please Enter Valid Password!</span>
+                        <div class="forgot-pass">Forgot Password?</div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon form-bot-check">
+                        <i class="fa fa-question"></i>
+                        <input class="mdl-textfield__input" type="number" id="loginpopup-bot">
+                        <label class="mdl-textfield__label" for="loginpopup-bot">What is 7 plus 1 = <em>* </em></label>
+                        <span class="mdl-textfield__error">Please Enter Correct Value!</span>
+                    </div>
+                    <div class="form-submit">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Login Now</button>
+                    </div>
+                    <div class="or-using">Or Using</div>
+                    <div class="social-login">
+                        <a href="#" class="social-facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                        <a href="#" class="social-google"><i class="fa fa-google"></i>Google</a>
+                    </div>
+                    <div class="login-link">
+                        <span class="paragraph-small">Don't have an account?</span>
+                        <a href="#" class="">Register as New User</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Login Modal -->
+    <!-- Start Register Modal -->
+    <div id="registerpopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Register as New User</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-user-o"></i>
+                        <input class="mdl-textfield__input" type="text" pattern="[A-Z,a-z, ]*" id="registerpopup-name">
+                        <label class="mdl-textfield__label" for="registerpopup-name">Name <em> *</em></label>
+                        <span class="mdl-textfield__error">Please Enter Valid Name!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-envelope-o"></i>
+                        <input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="registerpopup-email">
+                        <label class="mdl-textfield__label" for="registerpopup-email">Email <em> *</em></label>
+                        <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-key"></i>
+                        <input class="mdl-textfield__input" type="password" id="registerpopup-password">
+                        <label class="mdl-textfield__label" for="registerpopup-password">Password <em> *</em></label>
+                        <span class="mdl-textfield__error">Please Enter Valid Password(Min 6 Character)!</span>
+                    </div>
+                    <div class="login-condition">By clicking Creat Account you agree to our <a href="#">terms &#38; condition</a></div>
+                    <div class="form-submit">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Create Account</button>
+                    </div>
+                    <div class="or-using">Or Using</div>
+                    <div class="social-login">
+                        <a href="#" class="social-facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                        <a href="#" class="social-google"><i class="fa fa-google"></i>Google</a>
+                    </div>
+                    <div class="login-link">
+                        <span class="paragraph-small">Already have an account?</span>
+                        <a href="#" class="">Login Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Register Modal -->
+<!-- Start Footer Section -->
+<footer id="footer">
+        <div class="layer-stretch">
+            <!-- Start main Footer Section -->
+            <div class="row layer-wrapper">
+                <div class="col-md-4 footer-block">
+                    <div class="footer-ttl"><p>Basic Info</p></div>
+                    <div class="footer-container footer-a">
+                        <div class="tbl">
+                            <div class="tbl-row">
+                                <div class="tbl-cell"><i class="fa fa-map-marker"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">
+                                        Your office, Building Name<br />
+                                        Street name, Area<br />
+                                        City, Country Pin Code
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="tbl-row">
+                                <div class="tbl-cell"><i class="fa fa-phone"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">11122333333</p>
+                                </div>
+                            </div>
+                            <div class="tbl-row">
+                                <div class="tbl-cell"><i class="fa fa-envelope"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">hello@yourdomain.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-block">
+                    <div class="footer-ttl"><p>Quick Links</p></div>
+                    <div class="footer-container footer-b">
+                        <div class="tbl">
+                            <div class="tbl-row">
+                                <ul class="tbl-cell">
+                                    <li><a href="event-1.html">Event Style 1</a></li>
+                                    <li><a href="event-2.html">Event Style 2</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="privacy-policy.html">Privacy policy</a></li>
+                                    <li><a href="terms-conditions.html">Terms condition</a></li>
+                                    <li><a href="faq.html">Faq</a></li>
+                                </ul>
+                                <ul class="tbl-cell">
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="forgot.html">Forgot Password</a></li>
+                                    <li><a href="myappointment.html">My Appointment</a></li>
+                                    <li><a href="myrequest.html">My Request</a></li>
+                                    <li><a href="myprofile.html">My Profile</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-block">
+                    <div class="footer-ttl"><p>Newsletter</p></div>
+                    <div class="footer-container footer-c">
+                        <div class="footer-subscribe">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
+                                <input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="subscribe-email">
+                                <label class="mdl-textfield__label" for="subscribe-email">Your Email</label>
+                                <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+                            </div>
+                            <div class="footer-subscribe-button">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
+                            </div>
+                        </div>
+                        <ul class="social-list social-list-colored footer-social">
+                            <li>
+                                <a href="#" target="_blank" id="footer-facebook" class="fa fa-facebook"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-facebook">Facebook</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" id="footer-twitter" class="fa fa-twitter"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-twitter">Twitter</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" id="footer-google" class="fa fa-google"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-google">Google</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" id="footer-instagram" class="fa fa-instagram"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-instagram">Instagram</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" id="footer-youtube" class="fa fa-youtube"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-youtube">Youtube</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" id="footer-linkedin" class="fa fa-linkedin"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-linkedin">Linkedin</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" id="footer-flickr" class="fa fa-flickr"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-flickr">Flickr</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" id="footer-rss" class="fa fa-rss"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-rss">Rss</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End main Footer Section -->
+        <!-- Start Copyright Section -->
+        <div id="copyright">
+            <div class="layer-stretch">
+                <div class="paragraph-medium paragraph-white">2017 © Pepdev ALL RIGHTS RESERVED.</div>
+            </div>
+        </div><!-- End of Copyright Section -->
+    </footer><!-- End of Footer Section -->
+
+    <!-- **********Included Scripts*********** -->
+
+    <!-- Jquery Library 2.1 JavaScript-->
+    <script src="{%static 'js/jquery-2.1.4.min.js'%}"></script>
+    <!-- Popper JavaScript-->
+    <script src="{%static 'js/popper.min.js'%}"></script>
+    <!-- Bootstrap Core JavaScript-->
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+    <!-- Material Design Lite JavaScript-->
+    <script src="{%static 'js/material.min.js'%}"></script>
+    <!-- Material Select Field Script -->
+    <script src="{%static 'js/mdl-selectfield.min.js'%}"></script>
+    <!-- Flexslider Plugin JavaScript-->
+    <script src="{%static 'js/jquery.flexslider.min.js'%}"></script>
+    <!-- Owl Carousel Plugin JavaScript-->
+    <script src="{%static 'js/owl.carousel.min.js'%}"></script>
+    <!-- Scrolltofixed Plugin JavaScript-->
+    <script src="{%static 'js/jquery-scrolltofixed.min.js'%}"></script>
+    <!-- Magnific Popup Plugin JavaScript-->
+    <script src="{%static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <!-- WayPoint Plugin JavaScript-->
+    <script src="{%static 'js/jquery.waypoints.min.js'%}"></script>
+    <!-- CounterUp Plugin JavaScript-->
+    <script src="{%static 'js/jquery.counterup.js'%}"></script>
+    <!-- SmoothScroll Plugin JavaScript-->
+    <script src="{%static 'js/smoothscroll.min.js'%}"></script>
+    <!--Custom JavaScript for Klinik Template-->
+    <script src="{%static 'js/custom.js'%}"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-93901876-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

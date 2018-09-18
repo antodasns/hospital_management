@@ -1,0 +1,51 @@
+{%extends 'loginlayout.html'%}
+    {% load static %}
+
+{%block content%}
+<!-- End Header -->
+    <!-- Start page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Login</h1>
+                <p><a href="../../login">Home</a> &#8594; <span>Login</span></p>
+            </div>
+        </div>
+    </div><!-- End page Title Section -->
+    <!-- Start Login Section -->
+    <div id="login-page" class="layer-stretch">
+        <div class="layer-wrapper"> 
+            <div class="form-container">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    {{form.name}}
+                    <label class="mdl-textfield__label" for="sample-text-1">Name<em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Text!</span>
+                </div>
+                
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-paper-plane"></i>
+                    {{form.suggetion}}
+                    <label class="mdl-textfield__label" for="sample-message-1">Suggestion/prescription</label>
+                    <span class="mdl-textfield__error">Please Enter Your Query!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-paper-plane"></i>
+                    {{form.tips}}
+                    <label class="mdl-textfield__label" for="sample-message-1">Health Tips & Diets</label>
+                    <span class="mdl-textfield__error">Please Enter Your Query!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    {{form.date}}
+                    <label class="mdl-textfield__label" for="sample-text-1">Availabe Date<em> *</em></label>
+                    <span class="mdl-textfield__error">Date Format dd/mm/yyyy!</span>
+                </div>
+                <div class="form-submit">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+{%endblock%}

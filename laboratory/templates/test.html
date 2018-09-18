@@ -1,0 +1,47 @@
+{%extends 'loginlayout.html'%}
+    {% load static %}
+
+{%block content%}
+<!-- End Header -->
+    <!-- Start page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Login</h1>
+                <p><a href="../../login">Home</a> &#8594; <span>Login</span></p>
+            </div>
+        </div>
+    </div><!-- End page Title Section -->
+    <!-- Start Login Section -->
+    <div id="login-page" class="layer-stretch">
+        <div class="layer-wrapper"> 
+            <div class="form-container">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    {{form.patient_name}}
+                    <label class="mdl-textfield__label" for="sample-text-1">Patient Name<em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Text!</span>
+                </div>
+                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label form-input-icon">
+                    <i class="fa fa-angle-double-down"></i>
+                    {{form.test_name}}
+                    
+                    <label class="mdl-selectfield__label" for="sample-selectlist-1">Test Name<em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Text!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    {{form.result}}
+                    <label class="mdl-textfield__label" for="sample-text-1">Result<em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Text!</span>
+                </div>
+                
+                
+                <div class="form-submit">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+{%endblock%}
