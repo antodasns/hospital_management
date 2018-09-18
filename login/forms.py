@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.admin.widgets import AdminDateWidget
+from django.forms.fields import DateField
 
 designation= (
 ('1','Admin'),
@@ -8,6 +10,7 @@ designation= (
 )
 
 doctors= (
+	('','......'),
 	('1','Dermatologist'),
 	('2','Cardio'),
 	('3','ENT Specialist'),
@@ -40,11 +43,10 @@ class Patientreg(forms.Form):
 		'pattern':'[0-9]{10}','id':'sample-number-1'}))
 	status=forms.ChoiceField(choices=status,widget=forms.Select(attrs={'class':'mdl-selectfield__select',
 		'id':'sample-selectlist-1'}))
-	admit=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
-		'pattern':'[0-9]{2}/[0-9]{2}/[0-9]{4}','id':'sample-text-1'}))
-	discharge=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
-		'pattern':'[0-9]{2}/[0-9]{2}/[0-9]{4}','id':'sample-text-1'}))
-
+	admit=forms.DateField(widget=forms.DateInput(attrs={'class':'mdl-textfield__input',
+		'onfocus':'(this.type="date")','onblur':'(this.type="text")','id':'appointment-date'}))
+	discharge=forms.DateField(widget=forms.DateInput(attrs={'class':'mdl-textfield__input',
+		'onfocus':'(this.type="date")','onblur':'(this.type="text")','id':'appointment-date'}))
 
 #add doctors
 class Doctorreg(forms.Form):
@@ -57,15 +59,14 @@ class Doctorreg(forms.Form):
 		'pattern':'[0-9]{10}','id':'sample-number-1'}))
 	specialisation=forms.ChoiceField(choices=doctors,widget=forms.Select(attrs={'class':'mdl-selectfield__select',
 		'id':'sample-selectlist-1'}))
-	available_from=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
-		'pattern':'[1-12]{2}:[0-60]{2} [apm]{2}','id':'sample-text-1'}))
-	available_to=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
-		'pattern':'[1-12]{2}:[0-60]{2} [apm]{2}','id':'sample-text-1'}))
-	available_date=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
-		'pattern':'[0-9]{2}/[0-9]{2}/[0-9]{4}',
-		'id':'sample-text-1'}))
+	available_date=forms.DateField(widget=forms.DateInput(attrs={'class':'mdl-textfield__input',
+		'onfocus':'(this.type="date")','onblur':'(this.type="text")','id':'appointment-date'}))
+	available_from=forms.TimeField(widget=forms.TimeInput(attrs={'class':'mdl-textfield__input',
+		'onfocus':'(this.type="time")','onblur':'(this.type="text")','id':'appointment-date'}))
+	available_to=forms.TimeField(widget=forms.TimeInput(attrs={'class':'mdl-textfield__input',
+		'onfocus':'(this.type="time")','onblur':'(this.type="text")','id':'appointment-date'}))
 	photo=forms.ImageField()
-	
+
 #add lab_tech
 class Labreg(forms.Form):
 	name=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',

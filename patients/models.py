@@ -35,8 +35,8 @@ class Reports(models.Model):
 class Admit(models.Model):
 	admit_id=models.AutoField(max_length=11,primary_key=True)
 	patient_user_id=models.IntegerField()
-	admit_date=models.CharField(max_length=50)
-	discharge_date=models.CharField(max_length=50)
+	admit_date=models.DateField(max_length=50)
+	discharge_date=models.DateField(max_length=50)
 	class Meta:
 		verbose_name_plural="Admit_details"
 	def __str__(self):

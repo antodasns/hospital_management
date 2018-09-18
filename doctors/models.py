@@ -40,9 +40,9 @@ class Doctor(models.Model):
 class Doctor_timing(models.Model):
 	timing_id=models.AutoField(max_length=11,primary_key=True)
 	doctor_user_id=models.IntegerField()
-	date=models.CharField(max_length=50)
-	available_from=models.CharField(max_length=50)
-	available_to=models.CharField(max_length=50)
+	date=models.DateField(max_length=50)
+	available_from=models.TimeField(max_length=50)
+	available_to=models.TimeField(max_length=50)
 	class Meta:
     	verbose_name_plural="Doctor_timing"
     def __str__(self):
