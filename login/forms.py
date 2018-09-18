@@ -8,11 +8,11 @@ designation= (
 )
 
 doctors= (
-('1','Dermatologist'),
-('2','Cardio'),
-('3','ENT Specialist'),
-('4','Eye Specialist'),
-)
+	('1','Dermatologist'),
+	('2','Cardio'),
+	('3','ENT Specialist'),
+	('4','Eye Specialist'),
+	)
 
 status= (
 ('1','Admitted'),
@@ -64,7 +64,8 @@ class Doctorreg(forms.Form):
 	available_date=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
 		'pattern':'[0-9]{2}/[0-9]{2}/[0-9]{4}',
 		'id':'sample-text-1'}))
-
+	photo=forms.ImageField()
+	
 #add lab_tech
 class Labreg(forms.Form):
 	name=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from login.forms import Loginform,Patientreg
+from login.forms import Loginform,Patientreg,Doctorreg
 
 # Create your views here.
 def loginhome(request):
@@ -12,6 +12,20 @@ def login(request):
 	return render(request,'adminlogin.html', {'form': form})
 	
 def formp(request):
-	form=Patientreg()
-	return render(request,'sidebarform/formpatient.html',{'form': form})
+	form=''
+	if request.method == 'POST':
+		form=Contactform(request.POST)
+		if form.is_valid():
+			variable=Doctor(
+				name= form.cleaned_data['user_id'],
+				address = form.cleaned_data['timing_id'],
+				doctor_name = form.cleaned_data['doctor_name'],
+				mobile= form.cleaned_data['mobile'],
+				email= form.cleaned_data['email'],
+				photo= form.cleaned_data['photo'],
+				specialization= form.cleaned_data['specialization'],
+				)
+			variable.save()
+	form=Doctorreg()
+	return render(request,'sidebarform/formdoctor.html',{'form': form})
 

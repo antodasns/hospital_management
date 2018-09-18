@@ -4,9 +4,11 @@ from django.db import models
 position = (
             ('1','Admin'),
             ('2','Doctor'),
-            ('3','Lab_tech'),
+            ('3','Lab'),
             ('4','Patient'),
             )
+
+
 class users(models.Model):
     user_id=models.AutoField(max_length=11,primary_key=True)
     usesrname = models.CharField(max_length=50)
@@ -16,3 +18,5 @@ class users(models.Model):
     	verbose_name_plural="users"
     def __str__(self):
     	return self.username
+
+
