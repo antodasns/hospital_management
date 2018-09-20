@@ -52,6 +52,8 @@ class Patientreg(forms.Form):
 class Doctorreg(forms.Form):
 	name=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
 		'pattern':'[A-Za-z ]+','id':'sample-text-1'}))
+	username=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
+		'pattern':'[a-z0-9]+','id':'sample-text-1'}))
 	email=forms.EmailField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
 		'pattern':'[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$','id':'login-email'}))
 	password=forms.CharField(widget=forms.PasswordInput(attrs={'class':'mdl-textfield__input','id':'login-password'}))
@@ -65,7 +67,7 @@ class Doctorreg(forms.Form):
 		'onfocus':'(this.type="time")','onblur':'(this.type="text")','id':'appointment-date'}))
 	available_to=forms.TimeField(widget=forms.TimeInput(attrs={'class':'mdl-textfield__input',
 		'onfocus':'(this.type="time")','onblur':'(this.type="text")','id':'appointment-date'}))
-	photo=forms.ImageField()
+	photo=forms.FileField()
 
 #add lab_tech
 class Labreg(forms.Form):

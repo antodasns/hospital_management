@@ -11,7 +11,7 @@ position = (
 
 class users(models.Model):
     user_id=models.AutoField(max_length=11,primary_key=True)
-    usesrname = models.CharField(max_length=50)
+    username = models.CharField(max_length=50)
     password=models.CharField(max_length=35)
     designation=models.CharField(choices=position,max_length=1)
     class Meta:

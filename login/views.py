@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from login.forms import Loginform,Patientreg,Doctorreg
-
+from django.http import HttpResponse
+from doctors.models import Doctor
+from login.models import users
+from doctors.models import Doctor_timing
 # Create your views here.
 def loginhome(request):
 	
@@ -14,18 +17,34 @@ def login(request):
 def formp(request):
 	form=''
 	if request.method == 'POST':
-		form=Contactform(request.POST)
+		form=Doctorreg(request.POST, request.FILES)
 		if form.is_valid():
-			variable=Doctor(
-				name= form.cleaned_data['user_id'],
-				address = form.cleaned_data['timing_id'],
-				doctor_name = form.cleaned_data['doctor_name'],
-				mobile= form.cleaned_data['mobile'],
+			doc_deatil=Doctor(
+				doctor_name= form.cleaned_data['name'],
+				mobile= form.cleaned_data['number'],
 				email= form.cleaned_data['email'],
 				photo= form.cleaned_data['photo'],
-				specialization= form.cleaned_data['specialization'],
+				specialization= form.cleaned_data['specialisation'],
 				)
-			variable.save()
+			doc_deatil.save()
+
+			doc_login=users(
+				username=form.cleaned_data['username'],
+				password=form.cleaned_data['password'],
+				designation='2'
+				)
+			doc_login.save()
+
+			doc_timing=Doctor_timing(
+				available_date=form.cleaned_data['available_date'],
+				available_from=form.cleaned_data['available_from'],
+				available_to=form.cleaned_data['available_to'],
+				)
+			doc_timing.save()
+
+			return HttpResponse('success')
+		else:
+			return HttpResponse(form.errors)
 	form=Doctorreg()
 	return render(request,'sidebarform/formdoctor.html',{'form': form})
 

@@ -2,6 +2,7 @@
     {% load static %}
 
 {%block content%}
+
     <!-- Start Page Title Section -->
     <div class="page-ttl">
         <div class="layer-stretch">
@@ -52,6 +53,8 @@
                 </div>
 
                <!--Form-->
+               <form name="form" method="post" action="{% url 'login:formp'%}" enctype="multipart/form-data">
+                {% csrf_token %}
             <div id="login-page" class="layer-stretch">
                 <h2>Add Doctor</h2>
         <div class="layer-wrapper"> 
@@ -68,6 +71,12 @@
                     {{form.email}}
                     <label class="mdl-textfield__label" for="login-email">Email <em> *</em></label>
                     <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-envelope-o"></i>
+                    {{form.username}}
+                    <label class="mdl-textfield__label" for="login-email">User name<em> *</em></label>
+                    <span class="mdl-textfield__error">Use Small Cases Without Spaces!</span>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                     <i class="fa fa-key"></i>
@@ -129,7 +138,7 @@
                 <div class="form-submit">
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
                 </div>
-                
+                </form>
             </div>
         </div>
     </div>

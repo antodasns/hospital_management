@@ -18,7 +18,7 @@ class Doctor(models.Model):
 	doctor_name=models.CharField(max_length=50)
 	mobile=models.IntegerField()
 	email=models.EmailField(max_length=35)
-	photo=models.ImageField(max_length=255)
+	photo=models.ImageField()
 	specialization=models.CharField(choices=specialization,max_length=1)
 	class Meta:
 		verbose_name_plural="Doctor_deatails"
@@ -35,16 +35,15 @@ class Doctor(models.Model):
 	class Meta:
     	verbose_name_plural="Consulting"
     def __str__(self):
-    	return self.consult_id
+    	return self.consult_id'''
 
 class Doctor_timing(models.Model):
 	timing_id=models.AutoField(max_length=11,primary_key=True)
 	doctor_user_id=models.IntegerField()
-	date=models.DateField(max_length=50)
+	available_date=models.DateField(max_length=50)
 	available_from=models.TimeField(max_length=50)
 	available_to=models.TimeField(max_length=50)
 	class Meta:
-    	verbose_name_plural="Doctor_timing"
-    def __str__(self):
-    	return self.timing_id
-'''
+		verbose_name_plural="Doctor_timing"
+	def __str__(self):
+		return str(self.timing_id)
