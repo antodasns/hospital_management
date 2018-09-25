@@ -49,7 +49,7 @@
                             <li><a href="#" target="_blank" id="hdr-youtube" ><i class="fa fa-youtube" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-youtube">Youtube</span></li>
                             <li><a href="#" target="_blank" id="hdr-linkedin" ><i class="fa fa-linkedin" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-linkedin">Linkedin</span></li>
                             <li><a href="#" target="_blank" id="hdr-flickr" ><i class="fa fa-flickr" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-flickr">Flickr</span></li>
-                            <li><a href="#" target="_blank" id="hdr-rss" ><i class="fa fa-rss" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-rss">Rss</span></li>
+                            <li><a href="{% url 'laboratory:test'%}" target="_blank" id="hdr-rss" ><i class="fa fa-rss" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-rss">Rss</span></li>
                         </ul>
                     </div>
                 </div>
@@ -93,11 +93,11 @@
                         </li>
                         
                         <li>
-                            <a id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'doctors:patientname'%}">Patients</i></a>
+                            <a id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'laboratory:pat'%}">Patients</i></a>
                             
                         </li>
                         <li class="menu-megamenu-li">
-                            <a id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'patients:doc'%}">Doctors </i></a>
+                            <a id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'laboratory:doc'%}">Doctors </i></a>
                            
                         </li>
                     </ul><!-- End Menu Section -->

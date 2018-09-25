@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^$', views.index,name='laboratory'),
     url(r'^pat/$', views.pat,name='pat'),
     url(r'^doc/$', views.doc,name='doc'),
-
+    url(r'^test/$', views.test,name='test'),
 	]
 

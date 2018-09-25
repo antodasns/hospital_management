@@ -2,26 +2,25 @@
     {% load static %}
 
 {%block content%}
+
     <!-- Start Page Title Section -->
     <div class="page-ttl">
         <div class="layer-stretch">
             <div class="page-ttl-container">
                 <h1>User Mangement</h1>
-                <p><a href="#">Home</a> &#8594; <span>Add Patient</span></p>
+                <p><a href="#">Home</a> &#8594; <span>Add Doctor</span></p>
             </div>
         </div>
     </div><!-- End Page Title Section -->
     <!-- Start Doctor List Section -->
 
         <div class="layer-wrapper text-center">
-
             <div class="row">
-
                 <div class="col-lg-4">
-                    <br><br><br><br><br><br>
-                     
+                     <br><br><br><br><br><br>
+                   
                         <div class="sub-ttl">User Mangement</div>
-                        <a href="formdoctor" class="row blog-recent">
+                        <a href="#" class="row blog-recent">
                             <div class="col-4 blog-recent-img">
                                 <img class="img-responsive img-thumbnail" src="uploads/recent-1.jpg" alt="">
                             </div>
@@ -30,7 +29,7 @@
                                 
                             </div>
                         </a>
-                        <a href="#" class="row blog-recent">
+                        <a href="formpatient" class="row blog-recent">
                             <div class="col-4 blog-recent-img">
                                 <img class="img-responsive img-thumbnail" src="uploads/recent-2.jpg" alt="">
                             </div>
@@ -39,7 +38,7 @@
                            
                             </div>
                         </a>
-                        <a href="formlab" class="row blog-recent">
+                        <a href="formlabtech" class="row blog-recent">
                             <div class="col-4 blog-recent-img">
                                 <img class="img-responsive img-thumbnail" src="uploads/recent-3.jpg" alt="">
                             </div>
@@ -49,12 +48,13 @@
                             </div>
                         </a>
                         
-                    
+                   
                     
                 </div>
 
-               <!--form-->
-
+               <!--Form-->
+               <form name="form" method="post" action="{% url 'login:formpat'%}" enctype="multipart/form-data">
+                {% csrf_token %}
             <div id="login-page" class="layer-stretch">
                  <h2>Add Patient</h2>
         <div class="layer-wrapper"> 
@@ -76,6 +76,12 @@
                     {{form.email}}
                     <label class="mdl-textfield__label" for="login-email">Email <em> *</em></label>
                     <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-envelope-o"></i>
+                    {{form.username}}
+                    <label class="mdl-textfield__label" for="login-email">User name<em> *</em></label>
+                    <span class="mdl-textfield__error">Use Small Cases Without Spaces!</span>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                     <i class="fa fa-key"></i>
@@ -107,10 +113,11 @@
                     {{form.discharge}}
                     <label class="mdl-textfield__label" for="appointment-date">Discharge Date</label>
                     <span class="mdl-textfield__error">Please Enter Valid Date Number!</span>
+                </div>
                 <div class="form-submit">
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
                 </div>
-                
+                </form>
             </div>
         </div>
     </div>

@@ -61,7 +61,12 @@
                     <label class="mdl-textfield__label" for="sample-text-1">Name<em> *</em></label>
                     <span class="mdl-textfield__error">Please Enter Valid Text!</span>
                 </div>
-                
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-envelope-o"></i>
+                    {{form.username}}
+                    <label class="mdl-textfield__label" for="login-email">User name<em> *</em></label>
+                    <span class="mdl-textfield__error">Use Small Cases Without Spaces!</span>
+                </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                     <i class="fa fa-envelope-o"></i>
                     {{form.email}}

@@ -19,7 +19,6 @@ class Tests(models.Model):
 	test_id=models.AutoField(max_length=11,primary_key=True)
 	chart_id=models.IntegerField()
 	patient_user_id=models.IntegerField()
-	test_name=models.CharField(max_length=50)
 	test_result=models.TextField(max_length=500)
 	class Meta:
 		verbose_name_plural="Tests"

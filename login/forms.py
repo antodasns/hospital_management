@@ -34,8 +34,10 @@ class Loginform(forms.Form):
 class Patientreg(forms.Form):
 	name=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
 		'pattern':'[A-Za-z ]+','id':'sample-text-1'}))
-	dob=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
-		'pattern':'[0-9]{2}/[0-9]{2}/[0-9]{4}','id':'sample-text-1'}))
+	username=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
+		'pattern':'[a-z0-9]+','id':'sample-text-1'}))
+	dob=forms.DateField(widget=forms.DateInput(attrs={'class':'mdl-textfield__input',
+		'onfocus':'(this.type="date")','onblur':'(this.type="text")','id':'appointment-date'}))
 	email=forms.EmailField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
 		'pattern':'[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$','id':'login-email'}))
 	password=forms.CharField(widget=forms.PasswordInput(attrs={'class':'mdl-textfield__input','id':'login-password'}))
@@ -73,6 +75,8 @@ class Doctorreg(forms.Form):
 class Labreg(forms.Form):
 	name=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
 		'pattern':'[A-Za-z ]+','id':'sample-text-1'}))
+	username=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
+		'pattern':'[a-z0-9]+','id':'sample-text-1'}))
 	email=forms.EmailField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
 		'pattern':'[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$','id':'login-email'}))
 	password=forms.CharField(widget=forms.PasswordInput(attrs={'class':'mdl-textfield__input','id':'login-password'}))
