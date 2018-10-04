@@ -1,8 +1,8 @@
 {%extends 'patientlayout.html'%}
     {% load static %}
 
-{%block content%}<!-- End Header -->
-    <!-- Start Page Title Section -->
+{%block content%}
+<!-- Start Page Title Section -->
     <div class="page-ttl">
         <div class="layer-stretch">
             <div class="page-ttl-container">
@@ -17,27 +17,43 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
+                    	{%for x in doc%}
                         <div class="col-md-6">
                             <div class="theme-block">
+
                                 <div class="theme-block-picture doctor-picture-2">
-                                    <img src="uploads/doctor-1.jpg" alt="">
+                                	
+                                    <img src="{{x.photo.url}}" alt="">
+                                    
                                 </div>
                                 <div class="doctor-name doctor-name-2">
-                                    <h4><a>Daniel Barnes</a></h4>
+                                    <h4><a>{{x.doctor_name}}</a></h4>
                                 </div>
                                 <div class="theme-block-hidden">
                                     <div class="doctor-name">
-                                        <h4><a>Daniel Barnes</a></h4>
+                                        <h4><a>{{x.doctor_name}}</a></h4>
                                     </div>
                                     <div class="doctor-details">
                                         <div class="doctor-specility">
-                                            <p>Orthologist</p>
+                                            <p> {%if x.specialization == '1'%}
+                                        Dermatologist
+                                       {%endif%}
+                                        {%if x.specialization == '2'%}
+                                        cardio
+                                       {%endif%}
+                                        {%if x.specialization == '3'%}
+                                        ENT specialist
+                                       {%endif%}
+                                       {%if x.specialization == '4'%}
+                                        Eye specialist
+                                       {%endif%}</p>
                                         </div>
                                         <div class="doctor-details-extra">
-                                            <p><i class="fa fa-shield"></i>CEO &amp; Founder</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 8</p>
-                                            <p><i class="fa fa-star"></i>Experience: 17 year</p>
+                                            <p><i class="fa fa-shield"></i>{{x.mobile}}</p>
+                                            <p><i class="fa fa-mortar-board"></i>{{x.email}}</p>
+                                            <p><i class="fa fa-trophy"></i>{{x.available_date}}</p>
+                                            <p><i class="fa fa-star"></i>{{x.available_from}}</p>
+                                            <p><i class="fa fa-star"></i>{{x.available_to}}</p>
                                         </div>
                                     </div>
                                     <div class="doctor-social">
@@ -52,7 +68,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        {%endfor%}
+                        <!--<div class="col-md-6">
                             <div class="theme-block">
                                 <div class="theme-block-picture doctor-picture-2">
                                     <img src="uploads/doctor-2.jpg" alt="">
@@ -437,7 +454,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <ul class="theme-pagination">
                         <li><a href="#" class="active">1</a></li>

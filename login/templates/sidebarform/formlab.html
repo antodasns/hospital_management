@@ -1,4 +1,4 @@
-{%extends 'sidebarlayout.html'%}
+{%extends 'sidebarform/sidebarlayout.html'%}
     {% load static %}
 
 {%block content%}
@@ -18,7 +18,7 @@
                 <div class="col-lg-4">
                      <br><br><br><br><br><br>
                         <div class="sub-ttl">User Mangement</div>
-                        <a href="formdoctor" class="row blog-recent">
+                        <a href="{% url 'login:formdoc' %}" class="row blog-recent">
                             <div class="col-4 blog-recent-img">
                                 <img class="img-responsive img-thumbnail" src="uploads/recent-1.jpg" alt="">
                             </div>
@@ -27,7 +27,7 @@
                                 
                             </div>
                         </a>
-                        <a href="formpatient" class="row blog-recent">
+                        <a href="{% url 'login:formpat' %}" class="row blog-recent">
                             <div class="col-4 blog-recent-img">
                                 <img class="img-responsive img-thumbnail" src="uploads/recent-2.jpg" alt="">
                             </div>
@@ -51,6 +51,8 @@
                 </div>
 
                <!--Form-->
+               <form name="form" method="post" action="{% url 'login:formlab'%}" enctype="multipart/form-data">
+                {% csrf_token %}
             <div id="login-page" class="layer-stretch">
                 <h2>Add Lab Tech</h2>
         <div class="layer-wrapper"> 
@@ -94,4 +96,5 @@
             </div>
         </div>
     </div>
+</form>
     {%endblock%}

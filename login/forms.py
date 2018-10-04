@@ -3,10 +3,10 @@ from django.contrib.admin.widgets import AdminDateWidget
 from django.forms.fields import DateField
 
 designation= (
-('1','Admin'),
-('2','Doctor'),
-('3','Lab_tech'),
-('4','Patient'),
+('Admin','Admin'),
+('Doctor','Doctor'),
+('Lab_tech','Lab_tech'),
+('Patient','Patient'),
 )
 
 doctors= (
@@ -24,8 +24,8 @@ status= (
 
 #user login
 class Loginform(forms.Form):
-	email=forms.EmailField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
-	'pattern':'[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$','id':'login-email'}))
+	username=forms.CharField(widget=forms.TextInput(attrs={'class':'mdl-textfield__input',
+		'pattern':'[a-z0-9]+','id':'sample-text-1'}))
 	password=forms.CharField(widget=forms.PasswordInput(attrs={'class':'mdl-textfield__input','id':'login-password'}))
 	designation=forms.ChoiceField(choices=designation,widget=forms.Select(attrs={'class':'mdl-selectfield__select',
 		'id':'sample-selectlist-1'}))

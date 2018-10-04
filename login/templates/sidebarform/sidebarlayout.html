@@ -64,12 +64,12 @@
                     <div class="theme-dropdown">
                         <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13"><i class="fa fa-user-o color-black"></i> My Account</a>
                         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect metarial-menu" data-mdl-for="profile-menu">
-                            <li class="mdl-menu__item"><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
-                            <li class="mdl-menu__item"><a data-toggle="modal" data-target="#loginpopup"><i class="fa fa-sign-in"></i>Login Popup</a></li>
+                            <li class="mdl-menu__item"><a href="{% url 'login:logout'%}"><i class="fa fa-sign-in"></i>Logout</a></li>
+                            <!--<li class="mdl-menu__item"><a data-toggle="modal" data-target="#loginpopup"><i class="fa fa-sign-in"></i>Login Popup</a></li>
                             <li class="mdl-menu__item"><a href="register.html"><i class="fa fa-user-o"></i>Register</a></li>
                             <li class="mdl-menu__item"><a data-toggle="modal" data-target="#registerpopup"><i class="fa fa-user-o"></i>Register Popup</a></li>
                             <li class="mdl-menu__item"><a href="forgot.html"><i class="fa fa-key"></i>Forgot Password</a></li>
-                            <li class="mdl-menu__item"><a href="about.html"><i class="fa fa-info"></i>Help</a></li>
+                            <li class="mdl-menu__item"><a href="about.html"><i class="fa fa-info"></i>Help</a></li>-->
                         </ul>
                     </div>
                 </div>
@@ -88,14 +88,14 @@
                             <!-- Start Menu Section -->
                             <ul class="menu" style="text-align: center;">
                                 <li>
-                                    <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'login:formpat'%}">Home </i></a>
+                                    <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'login:formdoc'%}">Administration</i></a>
                                    
                                 </li>
                                 <li class="menu-megamenu-li">
 
                                 </li>
                                 <li>
-                                    <a id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'login:view_doc'%}">Doctor</i></a>
+                                    <a id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'login:view_doc'%}">Doctors</i></a>
                                   
                                 </li>
                                 <li class="menu-megamenu-li">
@@ -103,7 +103,7 @@
                                    
                                 </li>
                                 <li>
-                                    <a id="menu-blog" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'login:view_lab'%}">Laboratory</i>
+                                    <a id="menu-blog" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'login:view_lab'%}">Lab Technicians</i>
                                     </a>
                                    
                                 </li>

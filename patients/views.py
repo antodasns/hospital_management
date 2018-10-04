@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from doctors.models import Doctor,Doctor_timing
 
 # Create your views here.
 def index(request):
@@ -17,9 +17,11 @@ def profile(request):
 def ser(request):
 	
 	return render(request,'services-9.html')
+
 def doc(request):
+	get_doc=Doctor.objects.raw("SELECT * FROM doctors_doctor JOIN doctors_doctor_timing WHERE doctors_doctor.timing_id=doctors_doctor_timing.timing_id")
+	return render(request,'doc_details.html',{'doc':get_doc})
 	
-	return render(request,'doctor.html')
 def laboratory(request):
 	
 	return render(request,'laboratory.html')
@@ -29,3 +31,5 @@ def appointment(request):
 def labrep(request):
 	
 	return render(request,'labreports.html')
+
+	

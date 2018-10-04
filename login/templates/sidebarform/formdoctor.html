@@ -29,7 +29,7 @@
                                 
                             </div>
                         </a>
-                        <a href="formpatient" class="row blog-recent">
+                        <a href="{% url 'login:formpat' %}" class="row blog-recent">
                             <div class="col-4 blog-recent-img">
                                 <img class="img-responsive img-thumbnail" src="uploads/recent-2.jpg" alt="">
                             </div>
@@ -38,7 +38,7 @@
                            
                             </div>
                         </a>
-                        <a href="formlabtech" class="row blog-recent">
+                        <a href="{% url 'login:formlab' %}" class="row blog-recent">
                             <div class="col-4 blog-recent-img">
                                 <img class="img-responsive img-thumbnail" src="uploads/recent-3.jpg" alt="">
                             </div>
@@ -53,7 +53,7 @@
                 </div>
 
                <!--Form-->
-               <form name="form" method="post" action="{% url 'login:formp'%}" enctype="multipart/form-data">
+               <form name="form" method="post" action="{% url 'login:formdoc'%}" enctype="multipart/form-data">
                 {% csrf_token %}
             <div id="login-page" class="layer-stretch">
                 <h2>Add Doctor</h2>

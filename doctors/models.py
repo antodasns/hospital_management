@@ -10,6 +10,15 @@ specialization=(
             ('3','ENT specialist'),
             ('4','Eye specialist'),
 			)
+class Doctor_timing(models.Model):
+	timing_id=models.AutoField(max_length=11,primary_key=True)
+	available_date=models.DateField(max_length=50)
+	available_from=models.TimeField(max_length=50)
+	available_to=models.TimeField(max_length=50)
+	class Meta:
+		verbose_name_plural="Doctor_timing"
+	def __str__(self):
+		return str(self.timing_id)
 
 class Doctor(models.Model):
 	doctor_user_id=models.AutoField(max_length=11,primary_key=True)
@@ -37,13 +46,3 @@ class Doctor(models.Model):
     def __str__(self):
     	return self.consult_id'''
 
-class Doctor_timing(models.Model):
-	timing_id=models.AutoField(max_length=11,primary_key=True)
-	doctor_user_id=models.IntegerField()
-	available_date=models.DateField(max_length=50)
-	available_from=models.TimeField(max_length=50)
-	available_to=models.TimeField(max_length=50)
-	class Meta:
-		verbose_name_plural="Doctor_timing"
-	def __str__(self):
-		return str(self.timing_id)

@@ -13,7 +13,7 @@ class Patients(models.Model):
 	patient_user_id=models.AutoField(max_length=11,primary_key=True)
 	user_id=models.IntegerField()
 	patient_name=models.CharField(max_length=50)
-	dob=models.CharField(max_length=30)
+	dob=models.DateField(max_length=50)
 	mobile=models.IntegerField()
 	email=models.EmailField(max_length=35)
 	status=models.CharField(choices=status,max_length=1)
@@ -39,5 +39,4 @@ class Admit(models.Model):
 	discharge_date=models.DateField(max_length=50)
 	class Meta:
 		verbose_name_plural="Admit_details"
-	def __str__(self):
-		return self.admit_id
+	

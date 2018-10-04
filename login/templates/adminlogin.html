@@ -13,14 +13,16 @@
         </div>
     </div><!-- End page Title Section -->
     <!-- Start Login Section -->
+    <form name="form" method="post" action="{% url 'login:login'%}" enctype="multipart/form-data">
+                {% csrf_token %}
     <div id="login-page" class="layer-stretch">
         <div class="layer-wrapper"> 
             <div class="form-container">    
 
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                     <i class="fa fa-envelope-o"></i>
-                    {{form.email}}
-                    <label class="mdl-textfield__label" for="login-email">Email <em> *</em></label>
+                    {{form.username}}
+                    <label class="mdl-textfield__label" for="login-email">Username <em> *</em></label>
                     <span class="mdl-textfield__error">Please Enter Valid Email!</span>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
@@ -30,19 +32,15 @@
                     <span class="mdl-textfield__error">Please Enter Valid Password!</span>
                     <div class="forgot-pass">Forgot Password?</div>
                 </div>
-                <div class="btn-group mr-2">
-                                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Position</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Admin</a>
-                                        <a class="dropdown-item" href="#">Doctor</a>
-                                        <a class="dropdown-item" href="#">Lab Technician</a>
-                                        <a class="dropdown-item" href="#">Patient</a>
-                                   
-                                    </div>
-                                </div>
+                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label form-input-icon">
+                    <i class="fa fa-angle-double-down"></i>
+                    {{form.designation}}
+                    </select>
+                    <label class="mdl-selectfield__label" for="sample-selectlist-1">Designation</label>
+                </div>
                 
                 <div class="form-submit">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Login Now</button>
+                    <input type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary" value="Login Now">
                 </div>
                 <div class="or-using">Or Using</div>
                 <div class="social-login">
@@ -56,4 +54,5 @@
             </div>
         </div>
     </div>
+</form>
 {%endblock%}

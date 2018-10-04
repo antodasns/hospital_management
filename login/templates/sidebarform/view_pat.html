@@ -17,24 +17,33 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
+                        {%for x in pat%}
                         <div class="col-md-6">
                             <div class="theme-block theme-block-hover">
                                 <div class="theme-block-picture">
                                     <img src="uploads/doctor-1.jpg" alt="">
                                 </div>
                                 <div class="doctor-name">
-                                    <h4><a>Daniel Barnes</a></h4>
+                                    <h4><a>{{x.patient_name}}</a></h4>
                                 </div>
                                 <div class="doctor-details">
                                     <div class="doctor-specility">
-                                        <p>Orthologist</p>
+                                        <p>{%if x.specialization == '1'%}
+                                        Admited
+                                       {%endif%}
+                                        {%if x.specialization == '2'%}
+                                        Discharge
+                                       {%endif%}
+                                        </p>
                                     </div>
                                     <div class="doctor-details-extra">
                                         <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>CEO &amp; Founder</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 8</p>
-                                            <p><i class="fa fa-star"></i>Experience: 17 year</p>
+                                            <p><i class="fa fa-shield"></i>{{x.patient_name}}</p>
+                                            <p><i class="fa fa-mortar-board"></i>{{x.dob}}</p>
+                                            <p><i class="fa fa-trophy"></i>{{x.mobile}}</p>
+                                            <p><i class="fa fa-trophy"></i>{{x.email}}</p>
+                                            <p><i class="fa fa-star"></i>{{x.admit_date}}</p>
+                                            <p><i class="fa fa-star"></i>{{x.discharge_date}}</p>
                                         </div>
                                     </div>
                                     <div class="doctor-social">
@@ -49,358 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-2.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Melissa Bates</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Gynocologist</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>C00s</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 5</p>
-                                            <p><i class="fa fa-star"></i>Experience: 9 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-3.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Cheri Aria</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Dermatologist</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Intern</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 12</p>
-                                            <p><i class="fa fa-star"></i>Experience: 6 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-4.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Steve Soeren</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Orthologist</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Senior Resident</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 21</p>
-                                            <p><i class="fa fa-star"></i>Experience: 14 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-5.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Theodore Bennett</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Anesthesiologist</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Senior Resident</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 12</p>
-                                            <p><i class="fa fa-star"></i>Experience: 9 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-6.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Barbara Baker</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Surgeon</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>S.R.</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 13</p>
-                                            <p><i class="fa fa-star"></i>Experience: 17 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-7.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Linda Adams</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Gynocologist</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Senior Resident</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 7</p>
-                                            <p><i class="fa fa-star"></i>Experience: 16 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-8.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Janet Collins</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>OB/GYN</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Intern</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 2</p>
-                                            <p><i class="fa fa-star"></i>Experience: 5 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-9.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Vedhraj Jain</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>BAMS</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Head of Department</p>
-                                            <p><i class="fa fa-mortar-board"></i>B.A.M.S.</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 28</p>
-                                            <p><i class="fa fa-star"></i>Experience: 32 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-10.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Emily Rasberry</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Pathologist</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Resident</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 4</p>
-                                            <p><i class="fa fa-star"></i>Experience: 8 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-11.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Nancy Allen</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Gynocologist</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Resident</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MS</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 2</p>
-                                            <p><i class="fa fa-star"></i>Experience: 7 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="theme-block theme-block-hover">
-                                <div class="theme-block-picture">
-                                    <img src="uploads/doctor-12.jpg" alt="">
-                                </div>
-                                <div class="doctor-name">
-                                    <h4><a>Jean Lopat</a></h4>
-                                </div>
-                                <div class="doctor-details">
-                                    <div class="doctor-specility">
-                                        <p>Pathology</p>
-                                    </div>
-                                    <div class="doctor-details-extra">
-                                        <div class="doctor-details-extra-3">
-                                            <p><i class="fa fa-shield"></i>Senior Resident</p>
-                                            <p><i class="fa fa-mortar-board"></i>MBBS, MS</p>
-                                            <p><i class="fa fa-trophy"></i>Awards: 2</p>
-                                            <p><i class="fa fa-star"></i>Experience: 7 year</p>
-                                        </div>
-                                    </div>
-                                    <div class="doctor-social">
-                                        <ul class="social-list social-list-bordered social-list-rounded">
-                                            <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-google"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {%endfor%}
                     </div>
                     <ul class="theme-pagination">
                         <li><a href="#" class="active">1</a></li>
