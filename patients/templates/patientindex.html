@@ -37,11 +37,17 @@
 
  <header id="header-transparent">
         <div class="layer-stretch hdr-center">
-            <div class="row align-items-center">
+           <div class="row align-items-center">
                 <div class="col-5 d-none d-sm-none d-md-block d-lg-block d-xl-block">
                     <div class="hdr-center-account text-left p-0">
-                        <a class="font-14 mr-4" data-toggle="modal" data-target="#loginpopup"><i class="fa fa-sign-in"></i>Login</a>
-                        <a class="font-14" data-toggle="modal" data-target="#registerpopup"><i class="fa fa-user-o"></i>Profile</a>
+                        <a href="https://www.facebook.com" id="hdr-facebook" class="fa fa-facebook rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-facebook">Facebook</span>
+                        <a href="https://www.twitter.com" id="hdr-twitter" class="fa fa-twitter rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-twitter">Twitter</span>
+                        <a href="https://www.instagram.com" id="hdr-instagram" class="fa fa-instagram rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-instagram">Instagram</span>
+                        <a href="https://www.youtube.com" id="hdr-youtube" class="fa fa-youtube rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-youtube">Youtube</span>
                     </div>
                 </div>
                 <div class="col">
@@ -51,32 +57,11 @@
                 </div>
                 <div class="col-5 d-none d-sm-none d-md-block d-lg-block d-xl-block">
                     <div class="pull-right">
-                        <ul class="social-list social-list-white">
-                            <li>
-                                <a href="#" id="hdr-facebook" class="fa fa-facebook rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-facebook">Facebook</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-twitter" class="fa fa-twitter rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-twitter">Twitter</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-google" class="fa fa-google rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-google">Google</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-instagram" class="fa fa-instagram rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-instagram">Instagram</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-youtube" class="fa fa-youtube rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-youtube">Youtube</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-linkedin" class="fa fa-linkedin rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-linkedin">Linkedin</span>
-                            </li>
-                        </ul>
+                        <div class="col-5 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                            <div class="hdr-center-account text-left p-0">
+                                <a class="font-14 mr-4"  href="{% url 'patients:pat_logout' %}"><i class="fa fa-sign-out"></i>Logout</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,10 +76,6 @@
                            
                         </li>
                         
-                        <li>
-                            <a id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'patients:ser'%}">Service </i></a>
-                            
-                        </li>
                         <li class="menu-megamenu-li">
                             <a id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'patients:doc'%}">Doctors </i></a>
                            
@@ -169,6 +150,139 @@
                     </div>
                 </li>
             </ul>
+        </div>
+    </div>
+  
+    <div  id="service-page" class="layer-stretch">
+        <div class="layer-wrapper text-center">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-child"></i>
+                        <h5><a href="#">Childbirth Center</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-heartbeat"></i>
+                        <h5><a href="#">Cardiology</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-stethoscope"></i>
+                        <h5><a href="#">Cardiovascular centre</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-wheelchair-alt"></i>
+                        <h5><a href="#">Skin Care</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-flask"></i>
+                        <h5><a href="#">Laboratory Services</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-certificate"></i>
+                        <h5><a href="#">Mammography</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-h-square"></i>
+                        <h5><a href="#">Dermatologist</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-glass"></i>
+                        <h5><a href="#">Anesthesiology</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa fa-stethoscope"></i>
+                        <h5><a href="#">Paediatrics</a></h5>
+                        <p class="paragraph-small paragraph-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque at mollitia facilis laudantium sint atque doloremque dolorum voluptatibus unde modi dicta temporibus.</p>
+                    </div>
+                </div>
+            </div>
+            <ul class="theme-pagination theme-pagination-colored">
+                <li><a href="#">Prev</a></li>
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">10</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>
+    </div><!-- End Service List Section -->
+    <!-- Start Feature List Section -->
+    <div class="parallax-background parallax-background-1">
+        <div class="layer-stretch">
+            <div class="layer-wrapper layer-bottom-10 text-center">
+                <div class="layer-ttl layer-ttl-white">
+                    <h3>Why Choose Us</h3>
+                </div>
+                <div class="layer-container">
+                    <div class="feature-block">
+                        <div class="feature-icon"><i class="fa fa-phone"></i></div>
+                        <span>Emergency Departments</span>
+                        <p class="paragraph-small paragraph-white">Mel in hinc veri admodum, copiosae epicurei mea ei. Cum at nisl soleat. Eam insolens referrentur efficiantur an. Nibh deleniti ad vix, quodsi aliquam legendos pri in.</p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon"><i class="fa fa-calendar"></i></div>
+                        <span>24 hour Service</span>
+                        <p class="paragraph-small paragraph-white">Mel in hinc veri admodum, copiosae epicurei mea ei. Cum at nisl soleat. Eam insolens referrentur efficiantur an. Nibh deleniti ad vix, quodsi aliquam legendos pri in.</p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon"><i class="fa fa-cloud"></i></div>
+                        <span>Advanced Technology</span>
+                        <p class="paragraph-small paragraph-white">Mel in hinc veri admodum, copiosae epicurei mea ei. Cum at nisl soleat. Eam insolens referrentur efficiantur an. Nibh deleniti ad vix, quodsi aliquam legendos pri in.</p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon"><i class="fa fa-ambulance"></i></div>
+                        <span>Ambulance</span>
+                        <p class="paragraph-small paragraph-white">Mel in hinc veri admodum, copiosae epicurei mea ei. Cum at nisl soleat. Eam insolens referrentur efficiantur an. Nibh deleniti ad vix, quodsi aliquam legendos pri in.</p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon"><i class="fa fa-stethoscope"></i></div>
+                        <span>Primary health care</span>
+                        <p class="paragraph-small paragraph-white">Mel in hinc veri admodum, copiosae epicurei mea ei. Cum at nisl soleat. Eam insolens referrentur efficiantur an. Nibh deleniti ad vix, quodsi aliquam legendos pri in.</p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon"><i class="fa fa-shopping-bag"></i></div>
+                        <span>Pharmacies and drug stores</span>
+                        <p class="paragraph-small paragraph-white">Mel in hinc veri admodum, copiosae epicurei mea ei. Cum at nisl soleat. Eam insolens referrentur efficiantur an. Nibh deleniti ad vix, quodsi aliquam legendos pri in.</p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon"><i class="fa fa-hospital-o"></i></div>
+                        <span>Laboratory and research</span>
+                        <p class="paragraph-small paragraph-white">Mel in hinc veri admodum, copiosae epicurei mea ei. Cum at nisl soleat. Eam insolens referrentur efficiantur an. Nibh deleniti ad vix, quodsi aliquam legendos pri in.</p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon"><i class="fa fa-user-md"></i></div>
+                        <span>Medical nursing home</span>
+                        <p class="paragraph-small paragraph-white">Mel in hinc veri admodum, copiosae epicurei mea ei. Cum at nisl soleat. Eam insolens referrentur efficiantur an. Nibh deleniti ad vix, quodsi aliquam legendos pri in.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Start Login Modal -->

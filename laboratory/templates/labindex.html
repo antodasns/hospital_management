@@ -40,8 +40,14 @@
             <div class="row align-items-center">
                 <div class="col-5 d-none d-sm-none d-md-block d-lg-block d-xl-block">
                     <div class="hdr-center-account text-left p-0">
-                        <a class="font-14 mr-4" data-toggle="modal" data-target="#loginpopup"><i class="fa fa-sign-in"></i>Login</a>
-                        <a class="font-14" data-toggle="modal" data-target="#registerpopup"><i class="fa fa-user-o"></i>Profile</a>
+                        <a href="https://www.facebook.com" id="hdr-facebook" class="fa fa-facebook rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-facebook">Facebook</span>
+                        <a href="https://www.twitter.com" id="hdr-twitter" class="fa fa-twitter rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-twitter">Twitter</span>
+                        <a href="https://www.instagram.com" id="hdr-instagram" class="fa fa-instagram rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-instagram">Instagram</span>
+                        <a href="https://www.youtube.com" id="hdr-youtube" class="fa fa-youtube rounded"></a>
+                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-youtube">Youtube</span>
                     </div>
                 </div>
                 <div class="col">
@@ -51,32 +57,11 @@
                 </div>
                 <div class="col-5 d-none d-sm-none d-md-block d-lg-block d-xl-block">
                     <div class="pull-right">
-                        <ul class="social-list social-list-white">
-                            <li>
-                                <a href="#" id="hdr-facebook" class="fa fa-facebook rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-facebook">Facebook</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-twitter" class="fa fa-twitter rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-twitter">Twitter</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-google" class="fa fa-google rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-google">Google</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-instagram" class="fa fa-instagram rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-instagram">Instagram</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-youtube" class="fa fa-youtube rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-youtube">Youtube</span>
-                            </li>
-                            <li>
-                                <a href="#" id="hdr-linkedin" class="fa fa-linkedin rounded"></a>
-                                <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="hdr-linkedin">Linkedin</span>
-                            </li>
-                        </ul>
+                        <div class="col-5 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                            <div class="hdr-center-account text-left p-0">
+                                <a class="font-14 mr-4"  href="{% url 'laboratory:lab_logout' %}"><i class="fa fa-sign-out"></i>Logout</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -97,6 +82,10 @@
                         </li>
                         <li class="menu-megamenu-li">
                             <a id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'laboratory:doc'%}">Doctors </i></a>
+                           
+                        </li>
+                        <li class="menu-megamenu-li">
+                            <a id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'laboratory:result'%}">Test Result </i></a>
                            
                         </li>
                     </ul>

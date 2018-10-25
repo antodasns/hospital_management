@@ -5,7 +5,7 @@ from django.forms.fields import DateField
 designation= (
 ('Admin','Admin'),
 ('Doctor','Doctor'),
-('Lab_tech','Lab_tech'),
+('Laboratory','Laboratory'),
 ('Patient','Patient'),
 )
 

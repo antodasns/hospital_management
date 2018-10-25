@@ -1,0 +1,101 @@
+{%extends 'sidebarform/sidebarlayout.html'%}
+    {% load static %}
+
+{%block content%}
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>User Mangement</h1>
+                <p><a href="#">Home</a> &#8594; <span>Add Lab Tech</span></p>
+            </div>
+        </div>
+    </div><!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+
+        <div class="layer-wrapper text-center">
+            <div class="row">
+                <div class="col-lg-4">
+                     <br><br><br><br><br><br>
+                        <div class="sub-ttl">User Mangement</div>
+                        <a href="{% url 'login:formdoc' %}" class="row blog-recent">
+                            <div class="col-4 blog-recent-img">
+                                <img class="img-responsive img-thumbnail" src="uploads/recent-1.jpg" alt="">
+                            </div>
+                            <div class="col-8 blog-recent-post">
+                                <h3>Add Doctors</h3>
+                                
+                            </div>
+                        </a>
+                        <a href="{% url 'login:formpat' %}" class="row blog-recent">
+                            <div class="col-4 blog-recent-img">
+                                <img class="img-responsive img-thumbnail" src="uploads/recent-2.jpg" alt="">
+                            </div>
+                            <div class="col-8 blog-recent-post">
+                                <h3>Add Patients</h3>
+                           
+                            </div>
+                        </a>
+                        <a href="#" class="row blog-recent">
+                            <div class="col-4 blog-recent-img">
+                                <img class="img-responsive img-thumbnail" src="uploads/recent-3.jpg" alt="">
+                            </div>
+                            <div class="col-8 blog-recent-post">
+                                <h3>Add Lab Tech</h3>
+                            
+                            </div>
+                        </a>
+                        
+                   
+                    
+                </div>
+
+               <!--Form-->
+               <form name="form" method="post" action="{% url 'login:up_lab' id=edit_lab_id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+            <div id="login-page" class="layer-stretch">
+                <h2>Add Lab Tech</h2>
+                
+        <div class="layer-wrapper"> 
+            <div class="form-container">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-user-o"></i>
+                    <input class="mdl-textfield__input" type="text" pattern="[A-Z,a-z, ]*" id="sample-text-1" value="{{edit_lab_name}}" name="lab_name">
+                    <label class="mdl-textfield__label" for="sample-text-1">Name<em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Text!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-envelope-o"></i>
+                   <input class="mdl-textfield__input" type="text" pattern="[A-Z,a-z, ]*" id="sample-text-1" value="{{edit_username}}" name="user_name">
+                    <label class="mdl-textfield__label" for="login-email">User name<em> *</em></label>
+                    <span class="mdl-textfield__error">Use Small Cases Without Spaces!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-envelope-o"></i>
+                   <input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="sample-text-1" value="{{edit_lab_email}}" name="email1">
+                    <label class="mdl-textfield__label" for="login-email">Email <em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-key"></i>
+                  <input class="mdl-textfield__input" type="text" id="sample-text-1" value="{{edit_password}}" name="pass_word">                    <label class="mdl-textfield__label" for="login-password">Password <em> *</em></label>
+                    <span class="mdl-textfield__error">Please Enter Valid Password!</span>
+              
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-phone"></i>
+                   <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="sample-number-1" value="{{edit_lab_mobile}}" name="mobile_no1">
+                    <label class="mdl-textfield__label" for="sample-number-1">Number</label>
+                    <span class="mdl-textfield__error">Please Enter Valid Number!</span>
+                </div>
+                
+                <div class="form-submit">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</form>
+    {%endblock%}

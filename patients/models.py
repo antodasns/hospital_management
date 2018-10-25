@@ -39,4 +39,6 @@ class Admit(models.Model):
 	discharge_date=models.DateField(max_length=50)
 	class Meta:
 		verbose_name_plural="Admit_details"
+
+
 	

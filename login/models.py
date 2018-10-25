@@ -4,7 +4,7 @@ from django.db import models
 position = (
             ('Admin','Admin'),
             ('Doctor','Doctor'),
-            ('Lab','Lab'),
+            ('Laboratory','Laboratory'),
             ('Patient','Patient'),
             )
 

@@ -6,210 +6,41 @@
     <div class="page-ttl">
         <div class="layer-stretch">
             <div class="page-ttl-container">
-                <h1>Blogs</h1>
-                <p><a href="#">Home</a> &#8594; <span>Blogs</span></p>
+                <h1>Lab Reports</h1>
+                <p><a href="#">Home</a> &#8594; <span>Lab Reports</span></p>
             </div>
         </div>
     </div><!-- End Page Title Section -->
     <!-- Start Blog List Section -->
+    
     <div class="layer-stretch">
         <div class="layer-wrapper">
             <div class="row">
                 <div class="col-lg-8 text-center">
+                    {%for x in res%}
                     <div class="theme-material-card blog-full-block">
                         <div class="row">
                             <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
+                                <div class="blog-full-date">{{x.test_date}}</div>
                                 <div class="theme-img theme-img-scalerotate">
                                     <img src="uploads/blog-1.jpg" alt="">
                                 </div>
                             </div>
                             <div class="col-sm-8">
                                 <div class="blog-full-ttl">
-                                    <h3><a href="#">Which Healthy Food Fads Should You Follow?</a></h3>
+                                    <h3><a href="#">{{x.test_name}}</a></h3>
                                 </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Daniel Barnes</a>
-                                    <a class="pull-right anchor-icon">
-                                        Read More <i class="fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
+                                <div class="blog-full-description"><ul>
+                        <li>Result:-{{x.test_result}}</li>
+                        <li>Min:-{{x.upper_limit}}</li>
+                        <li>Max:-{{x.lower_limit}}</li>
+                        
+                    </ul></div>
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="theme-material-card blog-full-block">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
-                                <div class="theme-img theme-img-scalerotate">
-                                    <img src="uploads/blog-2.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="blog-full-ttl">
-                                    <h3><a href="#">A Broken Heart Can Hurt More Than You Think</a></h3>
-                                </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Daniel Barnes</a>
-                                    <a href="#" class="pull-right anchor-icon">
-                                        Read More <i class="fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="theme-material-card blog-full-block">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
-                                <div class="theme-img theme-img-scalerotate">
-                                    <img src="uploads/blog-3.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="blog-full-ttl">
-                                    <h3><a href="#">What steps can I take as a parent to ensure my child stays healthy during the school</a></h3>
-                                </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Barbara Baker</a>
-                                    <a href="#" class="pull-right anchor-icon">
-                                        Read More <i class="fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="theme-material-card blog-full-block">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
-                                <div class="theme-img theme-img-scalerotate">
-                                    <img src="uploads/blog-4.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="blog-full-ttl">
-                                    <h3><a href="#">Should I bring my child in for a routine physical prior to school starting?</a></h3>
-                                </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Cheri Aria</a>
-                                    <a href="#" class="pull-right anchor-icon">
-                                        Read More <i class="fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="theme-material-card blog-full-block">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
-                                <div class="theme-img theme-img-scalerotate">
-                                    <img src="uploads/blog-5.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="blog-full-ttl">
-                                    <h3><a href="#">What steps can I take as a parent to ensure my child stays healthy during the school</a></h3>
-                                </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Cheri Aria</a>
-                                    <a href="#" class="pull-right anchor-icon">Read More <i class="fa fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="theme-material-card blog-full-block">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
-                                <div class="theme-img theme-img-scalerotate">
-                                    <img src="uploads/doctor-6.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="blog-full-ttl">
-                                    <h3><a href="#">All you need to know about Chinese Food, Is it good or bad?</a></h3>
-                                </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Linda Adams</a>
-                                    <a href="#" class="pull-right anchor-icon">Read More <i class="fa fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="theme-material-card blog-full-block">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
-                                <div class="theme-img theme-img-scalerotate">
-                                    <img src="uploads/blog-7.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="blog-full-ttl">
-                                    <h3><a href="#">Why Food Poisoning happened and How To – Home Remedy</a></h3>
-                                </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Linda Adams</a>
-                                    <a href="#" class="pull-right anchor-icon">
-                                        Read More <i class="fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="theme-material-card blog-full-block">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
-                                <div class="theme-img theme-img-scalerotate">
-                                    <img src="uploads/blog-8.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="blog-full-ttl">
-                                    <h3><a href="#">All you need to know about Chinese Food, Is it good or bad?</a></h3>
-                                </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Vedhraj Jain</a>
-                                    <a class="pull-right anchor-icon">
-                                        Read More <i class="fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="theme-material-card blog-full-block">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="blog-full-date">26 June 2017</div>
-                                <div class="theme-img theme-img-scalerotate">
-                                    <img src="uploads/blog-9.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="blog-full-ttl">
-                                    <h3><a href="#">Keep it Clean: Make Sure Your Fruits and Veggies Are Safe and Healthy</a></h3>
-                                </div>
-                                <div class="blog-full-description">Restinguet citius, si ardentem acceperit. Non est enim vitium in oratione solum, sed etiam in moribus. In schola desinis. An haec ab eo non dicuntur? Longum est enim ad omnia respondere, quae a te dicta sunt. Cetera illa adhibebat, quibus demptis negat se Epicurus intellegere quid sit bonum.</div>
-                                <div class="blog-full-ftr">
-                                    <a class="pull-left blog-full-author"><i class="fa fa-user"></i> Vedhraj Jain</a>
-                                    <a href="#" class="pull-right anchor-icon">
-                                        Read More <i class="fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {%endfor%}
                     <ul class="theme-pagination">
                         <li><a href="#" class="active">1</a></li>
                         <li><a href="#">2</a></li>
@@ -276,68 +107,11 @@
                             </div>
                         </a>
                     </div>
-                    <div class="theme-material-card">
-                        <div class="sub-ttl">Trending Post</div>
-                        <div class="flexslider theme-flexslider">
-                            <ul class="slides">
-                                <li>
-                                    <div class="theme-flexslider-container">
-                                        <img src="uploads/blog-1.jpg" alt="" />
-                                        <h4 class="font-16 text-left"><a href="#">Why Food Poisoning happened and How To – Home Remedy</a></h4>
-                                        <p class="text-left primary-color">24 Aug 2017</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="theme-flexslider-container">
-                                        <img src="uploads/blog-2.jpg" alt="" />
-                                        <h4 class="font-16 text-left"><a href="#">All you need to know about Chinese Food, Is it good or bad?</a></h4>
-                                        <p class="text-left primary-color">24 Jul 2017</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="theme-material-card">
-                        <div class="sub-ttl">Categories</div>
-                        <ul class="category-list">
-                            <li><a href="#"><i class="fa fa-newspaper-o"></i>News</a><span>(10)</span></li>
-                            <li><a href="#"><i class="fa fa-history"></i>History</a><span>(20)</span></li>
-                            <li><a href="#"><i class="fa fa-th"></i>Mythology</a><span>(9)</span></li>
-                            <li><a href="#"><i class="fa fa-cloud"></i>Technology</a><span>(21)</span></li>
-                            <li><a href="#"><i class="fa fa-flask"></i>Science</a><span>(13)</span></li>
-                            <li><a href="#"><i class="fa fa-info-circle"></i>New Disese</a><span>(7)</span></li>
-                            <li><a href="#"><i class="fa fa-hospital-o"></i>Health</a><span>(5)</span></li>
-                            <li><a href="#"><i class="fa fa-wheelchair-alt"></i>wellness</a><span>(8)</span></li>
-                        </ul>
-                    </div>
-                    <div class="theme-material-card">
-                        <div class="sub-ttl">Popular Tags</div>
-                        <a href="#" class="theme-tag">Health</a>
-                        <a href="#" class="theme-tag">Wellness</a>
-                        <a href="#" class="theme-tag theme-tag-colored">Science</a>
-                        <a href="#" class="theme-tag">Doctor</a>
-                        <a href="#" class="theme-tag theme-tag-colored">Clinic</a>
-                    </div>
-                    <div class="theme-material-card">
-                        <div class="sub-ttl">Popular Tags</div>
-                        <a href="#" class="theme-tag theme-tag-1">Health</a>
-                        <a href="#" class="theme-tag theme-tag-1">Wellness</a>
-                        <a href="#" class="theme-tag theme-tag-1 theme-tag-colored">Science</a>
-                        <a href="#" class="theme-tag theme-tag-1">Doctor</a>
-                        <a href="#" class="theme-tag theme-tag-1 theme-tag-colored">Clinic</a>
-                    </div>
-                    <div class="theme-material-card">
-                        <div class="sub-ttl">Popular Tags</div>
-                        <a href="#" class="theme-tag theme-tag-2">Health</a>
-                        <a href="#" class="theme-tag theme-tag-2">Wellness</a>
-                        <a href="#" class="theme-tag theme-tag-2 theme-tag-colored">Science</a>
-                        <a href="#" class="theme-tag theme-tag-2">Doctor</a>
-                        <a href="#" class="theme-tag theme-tag-2 theme-tag-colored">Clinic</a>
-                    </div>
                 </div>
             </div>
         </div>
-    </div><!-- End Blog List Section -->
+    </div>
+    <!-- End Blog List Section -->
     <!-- Start Emergency Section -->
     <div id="emergency">
         <div class="layer-stretch">

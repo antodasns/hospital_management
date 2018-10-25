@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'login',
     'doctors',
     'laboratory',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
