@@ -15,37 +15,30 @@
     <div id="myappointment-page" class="layer-stretch">
         <div class="layer-wrapper layer-bottom-0">
             <div class="row myappointment-container">
+                {%for x in appoint_doc_date%}
                 <div class="col-sm-6 col-md-4">
                     <div class="theme-material-card">
-                        <div class="myappointment-text">
-                            <i class="fa fa-id-card"></i> 
-                            <span class="paragraph-medium paragraph-black">ID - 20170619273033418</span>
-                        </div>
+                        
                         <div class="myappointment-text">
                             <i class="fa fa-user-md"></i>
-                            <span class="paragraph-medium paragraph-black">Dr. Linda Adams</span>
+                            <span class="paragraph-medium paragraph-black">{{appoint_doc_name}}</span>
                         </div>
-                        <div class="myappointment-text">
-                            <i class="fa fa-user-o"></i> 
-                            <span class="paragraph-medium paragraph-black">Arya Stark</span>
-                        </div>
+                        
                         <div class="myappointment-text">
                             <i class="fa fa-calendar-plus-o"></i> 
-                            <span class="paragraph-medium paragraph-black">10 Jul 2017</span>
+                            <span class="paragraph-medium paragraph-black">{{x.appointment_date}}</span>
                         </div>
                         <div class="myappointment-text">
                             <i class="fa fa-clock-o"></i>
-                            <span class="paragraph-medium paragraph-black">10:00</span>
+                            <span class="paragraph-medium paragraph-black">{{x.appointment_time}}</span>
                         </div>
-                        <div class="myappointment-text">
-                            <i class="fa fa-flag-o"></i>
-                            <span class="paragraph-medium paragraph-black">In Process</span>
-                        </div>
+                        
                         <div class="myappointment-view">
                             <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-sm pull-right">Read More</a>
                         </div>
                     </div>
                 </div>
+                {%endfor%}
                 <div class="col-sm-6 col-md-4">
                     <div class="theme-material-card">
                         <div class="myappointment-text">

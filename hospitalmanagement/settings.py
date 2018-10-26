@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'login',
     'doctors',
     'laboratory',
-    
+    'reset_migrations',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

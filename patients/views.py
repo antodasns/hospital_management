@@ -51,7 +51,19 @@ def laboratory(request):
 def appointment(request):
 	if(request.session.get('password') and request.session.get('pat_username')):
 		if (request.session['password']=="TRUE") and (request.session['pat_username']):
-			return render(request,'myappointment.html')
+			pat=request.session.get('user_in')
+			d=[]
+			doci=[]
+			appoint_doc_id=Appointment.objects.all().filter(patient_user_id=pat)
+			for a in appoint_doc_id:
+				docs_id=a.doctor_user_id
+				d.append(a.doctor_user_id)
+			for i in d:
+				appoint_doc_name=Doctor.objects.values_list('doctor_name',flat=True).get(pk=i)
+				doci.append(appoint_doc_name)
+
+			appoint_doc_date=Appointment.objects.all().filter(patient_user_id=pat)
+			return render(request,'myappointment.html',{'appoint_doc_name':doci,'appoint_doc_date':appoint_doc_date})
 	else:
 		return HttpResponseRedirect("/login/login/")
 def labrep(request):

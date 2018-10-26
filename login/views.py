@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from login.forms import Loginform,Patientreg,Doctorreg
+from login.forms import Loginform,Patientreg,Doctorreg,Labreg
 from django.http import HttpResponse,HttpResponseRedirect
 from doctors.models import Doctor,Doctor_timing
 from laboratory.models import lab_tech
@@ -100,7 +100,7 @@ def view_doc(request):
 def view_pat(request):
 	if (request.session.get('password') and request.session.get('username')):
 		if (request.session['password']=="TRUE") and (request.session['username']):		
-			get_patient=Patients.objects.raw("SELECT * FROM patients_patients JOIN patients_admit WHERE patients_patients.patient_user_id=patients_admit.patient_user_id")
+			get_patient=Patients.objects.raw("SELECT * FROM patients_patients JOIN patients_admit WHERE patients_patients.admit_id=patients_admit.admit_id")
 			return render(request,'sidebarform/view_pat.html',{'pat':get_patient})
 	else:
 		return HttpResponseRedirect("/login/login/")
@@ -128,10 +128,11 @@ def formdoc(request):
 							doc_login=users(
 								username=form.cleaned_data['username'],
 								password=form.cleaned_data['password'],
-								designation='2'
+								designation='Doctor'
 								)
 							doc_login.save()
 							user_latest=users.objects.latest('user_id')
+
 							doc_timing=Doctor_timing(
 								available_date=form.cleaned_data['available_date'],
 								available_from=form.cleaned_data['available_from'],
@@ -139,6 +140,7 @@ def formdoc(request):
 								)
 							doc_timing.save()
 							user_time=Doctor_timing.objects.latest('timing_id')
+
 							doc_deatil=Doctor(
 								doctor_name= form.cleaned_data['name'],
 								mobile= form.cleaned_data['number'],
@@ -167,27 +169,32 @@ def formpat(request):
 			if request.method == 'POST':
 				form=Patientreg(request.POST)
 				if form.is_valid():
-					patient_detail=Patients(
-						patient_name=form.cleaned_data['name'],
-						dob=form.cleaned_data['dob'],
-						mobile=form.cleaned_data['number'],
-						email=form.cleaned_data['email'],
-						status=form.cleaned_data['status'],
-						)
-					patient_detail.save()
-
+					
 					patient_login=users(
 						username=form.cleaned_data['username'],
 						password=form.cleaned_data['password'],
-						designation='4'
+						designation='Patient'
 						)
 					patient_login.save()
+					user_latest=users.objects.latest('user_id')
 
 					patient_status=Admit(
+						status=form.cleaned_data['status'],
 						admit_date=form.cleaned_data['admit'],
 						discharge_date=form.cleaned_data['discharge'],
 						)
 					patient_status.save()
+					user_status_id=Admit.objects.latest('admit_id')
+					
+					patient_detail=Patients(
+						patient_name=form.cleaned_data['name'],
+						user_id=user_latest.user_id,
+						admit_id=user_status_id.admit_id,
+						dob=form.cleaned_data['dob'],
+						mobile=form.cleaned_data['number'],
+						email=form.cleaned_data['email'],
+						)
+					patient_detail.save()
 
 					return HttpResponse('success')
 				else:
@@ -203,26 +210,29 @@ def formlab(request):
 	
 			form=''
 			if request.method == 'POST':
-				form=Patientreg(request.POST)
+				form=Labreg(request.POST)
 				if form.is_valid():
+					
+					lab_login=users(
+						username=form.cleaned_data['username'],
+						password=form.cleaned_data['password'],
+						designation='Laboratory'
+						)
+					lab_login.save()
+					user_latest=users.objects.latest('user_id')
+
 					lab_detail=lab_tech(
+						user_id=user_latest.user_id,
 						name=form.cleaned_data['name'],
 						mobile=form.cleaned_data['number'],
 						email=form.cleaned_data['email'],
 						)
 					lab_detail.save()
 
-					lab_login=users(
-						username=form.cleaned_data['username'],
-						password=form.cleaned_data['password'],
-						designation='3'
-						)
-					lab_login.save()
-
 					return HttpResponse('success')
 				else:
 					return HttpResponse(form.errors)
-			form=Patientreg()
+			form=Labreg()
 			return render(request,'sidebarform/formlab.html',{'form': form})
 	else:
 		return HttpResponseRedirect("/login/login/")

@@ -12,11 +12,12 @@ status=(
 class Patients(models.Model):
 	patient_user_id=models.AutoField(max_length=11,primary_key=True)
 	user_id=models.IntegerField()
+	admit_id=models.IntegerField()
 	patient_name=models.CharField(max_length=50)
 	dob=models.DateField(max_length=50)
 	mobile=models.IntegerField()
 	email=models.EmailField(max_length=35)
-	status=models.CharField(choices=status,max_length=1)
+	
 	class Meta:
 		verbose_name_plural="Patient_details"
 	def __str__(self):
@@ -34,11 +35,13 @@ class Reports(models.Model):
 
 class Admit(models.Model):
 	admit_id=models.AutoField(max_length=11,primary_key=True)
-	patient_user_id=models.IntegerField()
+	status=models.CharField(choices=status,max_length=1)
 	admit_date=models.DateField(max_length=50)
 	discharge_date=models.DateField(max_length=50)
 	class Meta:
 		verbose_name_plural="Admit_details"
+	def __str__(self):
+		return self.admit_id
 
 
 	
