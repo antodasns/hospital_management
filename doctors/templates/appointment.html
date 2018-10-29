@@ -1,4 +1,4 @@
-{%extends 'patientlayout.html'%}
+{%extends 'doctorslayout.html'%}
     {% load static %}
 
 {%block content%}
@@ -16,22 +16,22 @@
         <div class="layer-wrapper layer-bottom-0">
             <div class="row myappointment-container">
                 
-                {%for appointment_date,doci in ziper%}
+                {%for appoint,pat_name in pat%}
                 <div class="col-sm-6 col-md-4">
                     <div class="theme-material-card">
                         
                         <div class="myappointment-text">
                             <i class="fa fa-user-md"></i>
-                            <span class="paragraph-medium paragraph-black">{{doci}}</span>
+                            <span class="paragraph-medium paragraph-black">{{pat_name}}</span>
                         </div>
                         
                         <div class="myappointment-text">
                             <i class="fa fa-calendar-plus-o"></i> 
-                            <span class="paragraph-medium paragraph-black">{{appointment_date.appointment_date}}</span>
+                            <span class="paragraph-medium paragraph-black">{{appoint.appointment_date}}</span>
                         </div>
                         <div class="myappointment-text">
                             <i class="fa fa-clock-o"></i>
-                            <span class="paragraph-medium paragraph-black">{{appointment_date.appointment_time}}</span>
+                            <span class="paragraph-medium paragraph-black">{{appoint.appointment_time}}</span>
                         </div>
                         
                         

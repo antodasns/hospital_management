@@ -387,7 +387,7 @@
         <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="appointment-now">Make An Appointment</div>
     </div><!-- End Fixed Appointment Button at Bottom -->
     <!-- Start Footer Section -->
-    <footer id="footer">
+   <footer id="footer">
         <div class="layer-stretch">
             <!-- Start main Footer Section -->
             <div class="row layer-wrapper">
@@ -399,9 +399,9 @@
                                 <div class="tbl-cell"><i class="fa fa-map-marker"></i></div>
                                 <div class="tbl-cell">
                                     <p class="paragraph-medium paragraph-white">
-                                        Your office, Building Name<br />
-                                        Street name, Area<br />
-                                        City, Country Pin Code
+                                        Era Hosoital, Detroid street<br />
+                                        Poplar Lane ,FL 32780<br />
+                                        TVM, India 765876
                                     </p>
                                 </div>
                             </div>
@@ -414,7 +414,7 @@
                             <div class="tbl-row">
                                 <div class="tbl-cell"><i class="fa fa-envelope"></i></div>
                                 <div class="tbl-cell">
-                                    <p class="paragraph-medium paragraph-white">hello@yourdomain.com</p>
+                                    <p class="paragraph-medium paragraph-white">erahospital@gmail.com.com</p>
                                 </div>
                             </div>
                         </div>
@@ -426,8 +426,7 @@
                         <div class="tbl">
                             <div class="tbl-row">
                                 <ul class="tbl-cell">
-                                    <li><a href="event-1.html">Event Style 1</a></li>
-                                    <li><a href="event-2.html">Event Style 2</a></li>
+                                   
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="gallery.html">Gallery</a></li>
                                     <li><a href="privacy-policy.html">Privacy policy</a></li>
@@ -437,7 +436,6 @@
                                 <ul class="tbl-cell">
                                     <li><a href="login.html">Login</a></li>
                                     <li><a href="register.html">Register</a></li>
-                                    <li><a href="forgot.html">Forgot Password</a></li>
                                     <li><a href="myappointment.html">My Appointment</a></li>
                                     <li><a href="myrequest.html">My Request</a></li>
                                     <li><a href="myprofile.html">My Profile</a></li>
@@ -498,11 +496,7 @@
             </div>
         </div><!-- End main Footer Section -->
         <!-- Start Copyright Section -->
-        <div id="copyright">
-            <div class="layer-stretch">
-                <div class="paragraph-medium paragraph-white">2017 © Pepdev ALL RIGHTS RESERVED.</div>
-            </div>
-        </div><!-- End of Copyright Section -->
+       <!-- End of Copyright Section -->
     </footer><!-- End of Footer Section -->
 
     <!-- **********Included Scripts*********** -->
@@ -538,6 +532,7 @@
     <!--Custom JavaScript for Klinik Template-->
     <script src="{%static 'js/custom.js' %}"></script>
     <!-- Event Full Calendar Script -->
+    {% for x in pat %}
     <script>
         var todayDate = moment().startOf('day'),
         YM = todayDate.format('YYYY-MM'),
@@ -551,7 +546,7 @@
 
         var events = [
         {
-            title: 'All Day Event',
+            title: '{{x.patient_name}}',
             start: YM + '-01',
             backgroundColor: colorBlue,
             borderColor: colorBlue
@@ -718,5 +713,6 @@
 
         });
     </script>
+    {% endfor %}
 </body>
 </html>

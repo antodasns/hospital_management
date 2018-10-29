@@ -8,7 +8,7 @@
         <div class="layer-stretch">
             <div class="page-ttl-container">
                 <h1>User Mangement</h1>
-                <p><a href="#">Home</a> &#8594; <span>Add Doctor</span></p>
+                
             </div>
         </div>
     </div><!-- End Page Title Section -->
@@ -19,33 +19,8 @@
                 <div class="col-lg-4">
                      <br><br><br><br><br><br>
                    
-                        <div class="sub-ttl">User Mangement</div>
-                        <a href="{% url 'login:formdoc' %}" class="row blog-recent">
-                            <div class="col-4 blog-recent-img">
-                                <img class="img-responsive img-thumbnail" src="uploads/recent-1.jpg" alt="">
-                            </div>
-                            <div class="col-8 blog-recent-post">
-                                <h3>Add Doctors</h3>
-                                
-                            </div>
-                        </a>
-                        <a href="#" class="row blog-recent">
-                            <div class="col-4 blog-recent-img">
-                                <img class="img-responsive img-thumbnail" src="uploads/recent-2.jpg" alt="">
-                            </div>
-                            <div class="col-8 blog-recent-post">
-                                <h3>Add Patients</h3>
-                           
-                            </div>
-                        </a>
-                        <a href="{% url 'login:formlab' %}" class="row blog-recent">
-                            <div class="col-4 blog-recent-img">
-                                <img class="img-responsive img-thumbnail" src="uploads/recent-3.jpg" alt="">
-                            </div>
-                            <div class="col-8 blog-recent-post">
-                                <h3>Add Lab Tech</h3>
-                            
-                            </div>
+                       
+                       
                         </a>
                         
                    
@@ -56,7 +31,7 @@
                <form name="form" method="post" action="{% url 'login:up_pat' id=edit_pat_id%}" enctype="multipart/form-data">
                 {% csrf_token %}
             <div id="login-page" class="layer-stretch">
-                 <h2>Add Patient</h2>
+                 <h2>Update Patient</h2>
         <div class="layer-wrapper"> 
             <div class="form-container">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
@@ -67,7 +42,7 @@
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                     <i class="fa fa-user-o"></i>
-                     <input class="mdl-textfield__input" type="text" id="appointment-date" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{edit_pat_dob}}" name="dob"> 
+                     <input class="mdl-textfield__input" type="text" id="appointment-date" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{edit_pat_dob|date:'Y-m-d'}}" name="dob"> 
                     <label class="mdl-textfield__label" for="sample-text-1">DOB<em> *</em></label>
                     <span class="mdl-textfield__error">Date Format dd/mm/yyyy!</span>
                 </div>
@@ -98,10 +73,10 @@
                 </div>
                 <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label form-input-icon">
                     <i class="fa fa-angle-double-down"></i>
-                    <select class="mdl-selectfield__select" id="sample-selectlist-1" value="{{edit_status}}" name="status">
+                    <select class="mdl-selectfield__select" id="sample-selectlist-1" name="status">
                                             <option value="" >&nbsp;</option>
-                                            <option value="1"{% if edit_specialization == '1' %} selected{%endif%}>Admitted</option>
-                                            <option value="2"{% if edit_specialization == '2' %} selected{%endif%}>Discharged</option>
+                                            <option value="{{edit_pat_status}}"{% if edit_pat_status == '1' %} selected{%endif%}>Admitted</option>
+                                            <option value="{{edit_pat_status}}"{% if edit_pat_status == '2' %} selected{%endif%}>Discharged</option>
                                             
                                         </select>
                     </select>
@@ -109,18 +84,18 @@
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                     <i class="fa fa-calendar-o"></i>
-                    <input class="mdl-textfield__input" type="text" id="appointment-date" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{edit_admit}}" name="admit_date"> 
+                    <input class="mdl-textfield__input" type="text" id="appointment-date" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{edit_admit|date:'Y-m-d'}}" name="admit_date"> 
                     <label class="mdl-textfield__label" for="appointment-date">Admit Date</label>
                     <span class="mdl-textfield__error">Please Enter Valid Date Number!</span>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                     <i class="fa fa-calendar-o"></i>
-                    <input class="mdl-textfield__input" type="text" id="appointment-date" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{edit_discharge}}" name="discharge_date"> 
+                    <input class="mdl-textfield__input" type="text" id="appointment-date" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{edit_discharge|date:'Y-m-d'}}" name="discharge_date"> 
                     <label class="mdl-textfield__label" for="appointment-date">Discharge Date</label>
                     <span class="mdl-textfield__error">Please Enter Valid Date Number!</span>
                 </div>
                 <div class="form-submit">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Update</button>
                 </div>
                 </form>
             </div>

@@ -45,7 +45,7 @@ class Patientreg(forms.Form):
 		'pattern':'[0-9]{10}','id':'sample-number-1'}))
 	status=forms.ChoiceField(choices=status,widget=forms.Select(attrs={'class':'mdl-selectfield__select',
 		'id':'sample-selectlist-1'}))
-	admit=forms.DateField(widget=forms.DateInput(attrs={'class':'mdl-textfield__input',
+	admit=forms.DateField(widget=forms.DateInput(attrs={'class':'mdl-textfield__input','type':'text',
 		'onfocus':'(this.type="date")','onblur':'(this.type="text")','id':'appointment-date'}))
 	discharge=forms.DateField(widget=forms.DateInput(attrs={'class':'mdl-textfield__input',
 		'onfocus':'(this.type="date")','onblur':'(this.type="text")','id':'appointment-date'}))

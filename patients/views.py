@@ -6,18 +6,27 @@ from django.http import HttpResponse,HttpResponseRedirect
 import random
 import datetime
 # Create your views here.
+
+#redirect_home----------------------------------------------------------------------------------------------------------------
+
 def index(request):
 	if(request.session.get('password') and request.session.get('pat_username')):
 		if (request.session['password']=="TRUE") and (request.session['pat_username']):
 			return HttpResponseRedirect("/patients/pat_home")
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#home-------------------------------------------------------------------------------------------------------------------------------
+
 def pat_home(request):
 	if(request.session.get('password') and request.session.get('pat_username')):
 		if (request.session['password']=="TRUE") and (request.session['pat_username']):
 			return render(request,'patientindex.html')
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#logout-------------------------------------------------------------------------------------------------------------------------------
+
 def pat_logout(request):
 	try:
 
@@ -27,13 +36,9 @@ def pat_logout(request):
 
 	except KeyError:
 		pass
-	return HttpResponseRedirect("/login/login/")
-def registration(request):
-	
-	return render(request,'registration')
-def profile(request):
-	
-	return render(request,'profile.html')
+	return HttpResponseRedirect("/login/")
+
+#view_doctor------------------------------------------------------------------------------------------------------------------------
 
 def doc(request):
 	if(request.session.get('password') and request.session.get('pat_username')):
@@ -41,19 +46,26 @@ def doc(request):
 			get_doc=Doctor.objects.raw("SELECT * FROM doctors_doctor JOIN doctors_doctor_timing WHERE doctors_doctor.timing_id=doctors_doctor_timing.timing_id")
 			return render(request,'doc_details.html',{'doc':get_doc})
 	else:
-		return HttpResponseRedirect("/login/login/")		
+		return HttpResponseRedirect("/login/")		
+
+#view_laboratory--------------------------------------------------------------------------------------------------------------------
+
 def laboratory(request):
 	if(request.session.get('password') and request.session.get('pat_username')):
 		if (request.session['password']=="TRUE") and (request.session['pat_username']):
 			return render(request,'laboratory.html')
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#appointment----------------------------------------------------------------------------------------------------------------------
+
 def appointment(request):
 	if(request.session.get('password') and request.session.get('pat_username')):
 		if (request.session['password']=="TRUE") and (request.session['pat_username']):
 			pat=request.session.get('user_in')
 			d=[]
 			doci=[]
+			
 			appoint_doc_id=Appointment.objects.all().filter(patient_user_id=pat)
 			for a in appoint_doc_id:
 				docs_id=a.doctor_user_id
@@ -63,53 +75,27 @@ def appointment(request):
 				doci.append(appoint_doc_name)
 
 			appoint_doc_date=Appointment.objects.all().filter(patient_user_id=pat)
-			return render(request,'myappointment.html',{'appoint_doc_name':doci,'appoint_doc_date':appoint_doc_date})
+			ziper=zip(appoint_doc_date,doci)
+			return render(request,'myappointment.html',{'ziper':ziper})
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#results---------------------------------------------------------------------------------------------------------------------------
+
 def labrep(request):
 	if(request.session.get('password') and request.session.get('pat_username')):
 		if (request.session['password']=="TRUE") and (request.session['pat_username']):
 			get_result=Tests.objects.raw("SELECT * FROM laboratory_tests JOIN laboratory_chart WHERE laboratory_tests.chart_id=laboratory_chart.chart_id")
 			return render(request,'labreports.html',{'res':get_result})
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#prescription_tips----------------------------------------------------------------------------------------------------------------
+
 def prescribe(request):
 	if(request.session.get('password') and request.session.get('pat_username')):
 		if (request.session['password']=="TRUE") and (request.session['pat_username']):
 			get_consult=Consulting.objects.all()
 			return render(request,'prescribe.html',{'consul':get_consult})
 	else:
-		return HttpResponseRedirect("/login/login/")
-'''def appoint(request):
-	result=Tests.objects.all().filter(chart_id=8)
-
-	normal=Chart.objects.all().filter(pk=8)
-	x=[]
-	time_list=['10:00:00','02:00:00','06:00:00']
-	month_no=datetime.datetime.now().month
-	year_no=datetime.datetime.now().year
-	day_no=datetime.datetime.now().day
-	day_rand=random.randint(day_no,28)
-	
-	for a in result:
-		res=int(a.test_result)
-		pat=a.patient_user_id
-	for b in normal:
-		high=int(b.upper_limit)
-		low=int(b.lower_limit)
-	if res not in range(high,low):
-		doc=Doctor.objects.all().filter(specialization=2)
-	for docs in doc:
-		appdoc=docs.doctor_user_id
-		x.append(appdoc)
-	rand_doc=random.choice(x)
-	rand_date=datetime.date(year_no,month_no,day_rand)
-	rand_time=random.choice(time_list)
-	
-	appt=Appointment()	
-	appt.doctor_user_id=rand_doc
-	appt.patient_user_id=pat
-	appt.appointment_date=rand_date
-	appt.appointment_time=rand_time
-	appt.save()
-	return HttpResponse("success")'''
+		return HttpResponseRedirect("/login/")

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'login',
     'doctors',
     'laboratory',
+    
     'reset_migrations',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+
         },
     },
 ]

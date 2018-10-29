@@ -8,18 +8,27 @@ import datetime
 import random
 import numpy
 # Create your views here.
+
+#redirect_home--------------------------------------------------------------------------------------------------------------------------
+
 def index(request):
 	if (request.session.get('password') and request.session.get('lab_username')):
 		if (request.session['password']=="TRUE") and (request.session['lab_username']):
 			return HttpResponseRedirect("/laboratory/lab_home")
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#home-----------------------------------------------------------------------------------------------------------------------------
+
 def lab_home(request):
 	if (request.session.get('password') and request.session.get('lab_username')):
 		if (request.session['password']=="TRUE") and (request.session['lab_username']):
 			return render(request,'labindex.html')
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#logout-------------------------------------------------------------------------------------------------------------------------
+
 def lab_logout(request):
 	try:
 
@@ -29,21 +38,29 @@ def lab_logout(request):
 
 	except KeyError:
 		pass
-	return HttpResponseRedirect("/login/login/")
+	return HttpResponseRedirect("/login/")
+
+#view_patients---------------------------------------------------------------------------------------------------------------------
+
 def pat(request):
 	if (request.session.get('password') and request.session.get('lab_username')):
 		if (request.session['password']=="TRUE") and (request.session['lab_username']):
 			get_pat=Patients.objects.all()
 			return render(request,'patientnamelab.html',{'pat':get_pat})
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#view_doc-------------------------------------------------------------------------------------------------------------------------
+
 def doc(request):
 	if (request.session.get('password') and request.session.get('lab_username')):
 		if (request.session['password']=="TRUE") and (request.session['lab_username']):
 			get_doc=Doctor.objects.raw("SELECT * FROM doctors_doctor JOIN doctors_doctor_timing WHERE doctors_doctor.timing_id=doctors_doctor_timing.timing_id")
 			return render(request,'doctorlab.html',{'doc':get_doc})
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#view_test_result--------------------------------------------------------------------------------------------------------------------
 
 def result(request):
 	if (request.session.get('password') and request.session.get('lab_username')):
@@ -52,7 +69,10 @@ def result(request):
 			get_test=Chart.objects.all()
 			return render(request,'test.html',{'pat':get_pat, 'tst':get_test})
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
+
+#submit_result/recoment/appointment---------------------------------------------------------------------------------------------------
+
 def submit_result(request):
 	if (request.session.get('password') and request.session.get('lab_username')):
 		if (request.session['password']=="TRUE") and (request.session['lab_username']):
@@ -68,6 +88,7 @@ def submit_result(request):
 				user_id_pat=Patients.objects.all().filter(pk=request.POST.get("patname"))
 				for i in user_id_pat:
 					use=i.user_id
+					
 				#cardio appointment
 
 				if chart_id=='8':
@@ -226,4 +247,4 @@ def submit_result(request):
 					return HttpResponse("no value")
 
 	else:
-		return HttpResponseRedirect("/login/login/")
+		return HttpResponseRedirect("/login/")
