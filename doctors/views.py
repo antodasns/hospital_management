@@ -47,7 +47,7 @@ def patappointment(request):
 			pat_id=[]
 			pat_name=[]
 			user_id_session=request.session.get('user_in')
-			user_id_doc=Doctor.objects.values_list('doctor_user_id',flat=True).get(pk=user_id_session)
+			user_id_doc=Doctor.objects.values_list('doctor_user_id',flat=True).get(user_id=user_id_session)
 			appoint=Appointment.objects.all().filter(doctor_user_id=user_id_doc)
 			for x in appoint:
 				pat_use=x.patient_user_id
@@ -79,6 +79,7 @@ def consultings(request,id):
 def submit_consult(request,id):
 	if (request.session.get('password') and request.session.get('doc_username')):
 		if (request.session['password']=="TRUE") and (request.session['doc_username']):
+			
 			if request.method == 'POST':
 				consults=Consulting(
 				patient_user_id=id,
@@ -88,7 +89,7 @@ def submit_consult(request,id):
 				consult_date=datetime.date.today(),
 				next_consult_dates=request.POST.get('date'))
 				consults.save()
-			return HttpResponseRedirect("/patientview/")
+			return HttpResponseRedirect("/doctors/patientview/")
 	else:
 		return HttpResponseRedirect("/login/")
 

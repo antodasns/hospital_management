@@ -95,11 +95,11 @@ def submit_result(request):
 					result=Tests.objects.all().filter(chart_id=8)
 					normal=Chart.objects.all().filter(pk=8)
 					x=[]
-					time_list=['10:00:00','02:00:00','06:00:00']
+					time_list=['10:00:00','11:00:00','12:00:00','01:00:00','02:00:00','03:00:00','04:00:00','05:00:00','06:00:00',]
 					month_no=datetime.datetime.now().month
 					year_no=datetime.datetime.now().year
 					day_no=datetime.datetime.now().day
-					day_rand=random.randint(day_no,28)
+					day_rand=random.randint(day_no,30)
 					
 					for a in result:
 						res=int(a.test_result)
@@ -124,7 +124,7 @@ def submit_result(request):
 					appt.appointment_date=rand_date
 					appt.appointment_time=rand_time
 					appt.save()
-					return HttpResponse("cardio success")
+					return HttpResponseRedirect("/laboratory/result/")
 
 					#Endocrinologists
 
@@ -136,7 +136,7 @@ def submit_result(request):
 					normal=Chart.objects.all().filter(pk=c)
 
 					x=[]
-					time_list=['10:00:00','02:00:00','06:00:00']
+					time_list=['10:00:00','11:00:00','12:00:00','01:00:00','02:00:00','03:00:00','04:00:00','05:00:00','06:00:00',]
 					month_no=datetime.datetime.now().month
 					year_no=datetime.datetime.now().year
 					day_no=datetime.datetime.now().day
@@ -165,7 +165,7 @@ def submit_result(request):
 					appt.appointment_date=rand_date
 					appt.appointment_time=rand_time
 					appt.save()
-					return HttpResponse("Endocrinologists success")
+					return HttpResponseRedirect("/laboratory/result/")
 
 					#Hematology 
 
@@ -173,7 +173,7 @@ def submit_result(request):
 					result=Tests.objects.all().filter(chart_id=2)
 					normal=Chart.objects.all().filter(pk=2)
 					x=[]
-					time_list=['10:00:00','02:00:00','06:00:00']
+					time_list=['10:00:00','11:00:00','12:00:00','01:00:00','02:00:00','03:00:00','04:00:00','05:00:00','06:00:00',]
 					month_no=datetime.datetime.now().month
 					year_no=datetime.datetime.now().year
 					day_no=datetime.datetime.now().day
@@ -202,7 +202,7 @@ def submit_result(request):
 					appt.appointment_date=rand_date
 					appt.appointment_time=rand_time
 					appt.save()
-					return HttpResponse("Hematology success")
+					return HttpResponseRedirect("/laboratory/result/")
 
 					#Hematology 1
 
@@ -212,7 +212,7 @@ def submit_result(request):
 					result=Tests.objects.all().filter(chart_id=d)
 					normal=Chart.objects.all().filter(pk=d)
 					x=[]
-					time_list=['10:00:00','02:00:00','06:00:00']
+					time_list=['10:00:00','11:00:00','12:00:00','01:00:00','02:00:00','03:00:00','04:00:00','05:00:00','06:00:00',]
 					month_no=datetime.datetime.now().month
 					year_no=datetime.datetime.now().year
 					day_no=datetime.datetime.now().day
@@ -241,7 +241,7 @@ def submit_result(request):
 					appt.appointment_date=rand_date
 					appt.appointment_time=rand_time
 					appt.save()
-					return HttpResponse("Hematology success")
+					return HttpResponseRedirect("/laboratory/result/")
 
 				else:
 					return HttpResponse("no value")

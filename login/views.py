@@ -170,7 +170,7 @@ def formdoc(request):
 								)
 							doc_deatil.save()
 
-							return HttpResponse('success')
+							return HttpResponseRedirect('/formdoc/')
 						else:
 							return HttpResponse(form.errors)
 					form=Doctorreg()
@@ -215,7 +215,7 @@ def formpat(request):
 						)
 					patient_detail.save()
 
-					return HttpResponse('success')
+					return HttpResponseRedirect('/formpat/')
 				else:
 					return HttpResponse(form.errors)
 			form=Patientreg()
@@ -250,7 +250,7 @@ def formlab(request):
 						)
 					lab_detail.save()
 
-					return HttpResponse('success')
+					return HttpResponseRedirect('/formlab/')
 				else:
 					return HttpResponse(form.errors)
 			form=Labreg()

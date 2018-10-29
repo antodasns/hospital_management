@@ -23,15 +23,6 @@ class Patients(models.Model):
 	def __str__(self):
 		return self.patient_name
 
-class Reports(models.Model):
-	report_id=models.AutoField(max_length=11,primary_key=True)
-	tech_id=models.IntegerField()
-	patient_user_id=models.IntegerField()
-	test_id=models.IntegerField()
-	class Meta:
-		verbose_name_plural="Reports"
-	def __str__(self):
-		return self.report_id
 
 class Admit(models.Model):
 	admit_id=models.AutoField(max_length=11,primary_key=True)
