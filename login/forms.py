@@ -11,10 +11,10 @@ designation= (
 
 doctors= (
 	('','......'),
-	('1','Dermatologist'),
-	('2','Cardio'),
-	('3','ENT Specialist'),
-	('4','Eye Specialist'),
+	('1','Endocrinologists'),
+	('2','Cardiologist'),
+	('3','Hematologist'),
+	
 	)
 
 status= (
